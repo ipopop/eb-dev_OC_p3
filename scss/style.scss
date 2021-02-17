@@ -1,8 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&family=Shrikhand&display=swap');
 
-
 @import "libs/reset.scss"; /* minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */
+
+$primary: #9356DC;
+$secondary: #FF79DA;
+$tertiary: #99E2D0;
 
 /* ---- reset & common styles ---- */
 *, ::before, ::after {
