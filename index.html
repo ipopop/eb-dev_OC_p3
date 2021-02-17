@@ -1,35 +1,71 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="theme-color" content="#9356DC"/>
+    <meta name="theme-color" content="#9356DC" />
     <meta name="viewport" content="width=device-width">
     <meta name="robots" content="follow">
-    <meta name="description" content="this project is just a web dev student exercice. Ohmyfood! est une entreprise de commande de repas en ligne. Notre concept permet aux utilisateurs de composer leur propre menu et réduire leur temps d’attente dans les restaurants car leur menu est préparé à l’avance. Plus de perte de temps à consulter la carte !">
+    <meta name="description"
+        content="this project is just a web dev student exercice. Ohmyfood! est une entreprise de commande de repas en ligne. Notre concept permet aux utilisateurs de composer leur propre menu et réduire leur temps d’attente dans les restaurants car leur menu est préparé à l’avance. Plus de perte de temps à consulter la carte !">
     <meta property="og:title" content="ohmyfood! Paris" />
     <meta property="og:type" content="home page" />
     <meta property="og:url" content="https://ipopop.github.io/eb-dev_OC_p3" />
-    <meta property="og:image" content="https://ipopop.github.io/eb-dev_OC_p3/assets/logo/ohmyfood.svg" />
+    <meta property="og:image" content="https://ipopop.github.io/eb-dev_OC_p3/assets/logo/logo-ohmyfood.svg" />
     <meta property="og:site_name" content="ohmyfood! Paris" />
-    <meta property="og:description" content="ohmyfood! Paris - commander son menu au restaurant dès la reservation"/>
-    <link rel="apple-touch-icon" sizes="180x180" href="https://ipopop.github.io/eb-dev_OC_p3/assets/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://ipopop.github.io/eb-dev_OC_p3/assets/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="https://ipopop.github.io/eb-dev_OC_p3/assets/favicon/favicon-16x16.png">
+    <meta property="og:description" content="ohmyfood! Paris - commander son menu au restaurant dès la reservation" />
+    <link rel="apple-touch-icon" sizes="180x180"
+        href="https://ipopop.github.io/eb-dev_OC_p3/assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="https://ipopop.github.io/eb-dev_OC_p3/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="https://ipopop.github.io/eb-dev_OC_p3/assets/favicon/favicon-16x16.png">
     <link rel="manifest" href="https://ipopop.github.io/eb-dev_OC_p3/assets/favicon/site.webmanifest">
     <link rel="preload" href="css/style.css" as="style">
     <link rel="stylesheet" href="css/style.css">
     <title>ohmyfood! Paris - commander son menu au restaurant dès la reservation</title>
 </head>
+
 <body>
-    <header>
-        <H1>ohmyfood</H1>
+    <header class="logo grid-center">
+        <img src="assets/logo/logo-ohmyfood.svg" alt="ohmyfood">
     </header>
-    <main>
-        <h2>MAIN</h2>
+    <main class="grid-center">
+        <section class="map h-center">
+            <img class="fa-ico map-marker" src="assets/icon/map-marker-alt.svg" alt="map marker icon">
+            <p>Paris, Belleville</p>
+        </section>
+        <section class="banner h-center">
+            <div class="banner__content h-center">
+                <h2>Réservez le menu qui vous convient</h2>
+                <p>Découvrez des restaurants d'exception, séléctionnés par nos soins.</p>
+            </div>
+            <a href="#">
+                <button class="btn banner__btn">Explorer nos restaurants</button>
+            </a>
+        </section>
+        <section class="main-block grid-center">
+            <img src="assets/img/main-center.jpg" alt="main content">
+        </section>
     </main>
     <footer>
-        <h2>FOOTER</h2>
+        <a href="#"><img src="assets/logo/logo-ohmyfood-2.svg" alt="ohmyfood"></a>
+        <div class="footer__content">
+            <a href="#"><img class="fa-ico utensils" src="assets/icon/utensils.svg" alt="utensils icon">
+                <p>Proposer un restaurant</p>
+            </a>
+            <a href="#"><img class="fa-ico hands-helping" src="assets/icon/hands-helping.svg" alt="hands helping icon">
+                <p>Devenir partenaire</p>
+            </a>
+            <a href="#">
+                <p>Mentions légales</p>
+            </a>
+            <a href="#">
+                <p>Contact</p>
+            </a>
+        </div>
     </footer>
 </body>
+
 </html>

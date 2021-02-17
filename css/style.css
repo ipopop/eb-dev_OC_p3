@@ -47,7 +47,9 @@ td, th {
 
 /* minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */
 /* ---- reset & common styles ---- */
-*, ::before, ::after {
+*,
+::before,
+::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -59,16 +61,31 @@ td, th {
 
 html {
   line-height: 1.5rem;
-  color: black;
+  color: #333;
   scroll-behavior: smooth;
 }
 
-html, input#search__input, button {
+html,
+input#search__input,
+button,
+p {
   font-family: "Roboto", sans-serif;
+  font-size: 1rem;
 }
 
-body, ul, h1, h2, h3, p, button, div, a, a:visited, a:hover {
+body,
+ul,
+h1,
+h2,
+h3,
+p,
+button,
+div,
+a,
+a:visited,
+a:hover {
   text-decoration: none;
+  color: #333;
 }
 
 main {
@@ -79,7 +96,11 @@ main {
 
 /* ---- end reset & common styles ---- */
 /* ---- basic HTML elements ---- */
-h1, h2 {
+h1, h2, h3 {
+  font-weight: 700;
+}
+
+h2 {
   font-size: 1.33rem;
 }
 
@@ -87,8 +108,9 @@ h3 {
   font-size: 1.125rem;
 }
 
-a, button, .card {
-  color: black;
+a,
+button,
+.card {
   transform: scale(1);
   transition: all 0.5s cubic-bezier(0.25, 0.45, 0.45, 0.95);
 }
@@ -107,35 +129,152 @@ img {
   image-rendering: auto;
 }
 
-button {
-  background: white;
+.btn {
   cursor: pointer;
   font-size: 1rem;
   border: none;
+  text-decoration: none;
+  text-align: center;
 }
 
-header, main, footer {
+/* ---- end basic HTML elements ---- */
+/* ---- flex center ---- */
+.h-center {
+  display: flex;
+  justify-content: center;
+}
+
+.v-center {
+  display: flex;
+  align-items: center;
+}
+
+/* ---- end flex center ---- */
+.grid-center {
   display: grid;
   place-items: center;
+}
+
+/* ---- placeholder img & icons width & height ---- */
+.img {
+  width: 95px;
+  height: 45px;
+}
+
+.fa-ico {
+  width: 20.8px;
+}
+
+/* ---- end placeholder img & icons width & height ---- */
+header {
+  position: sticky;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.75);
+  min-height: 64px;
+  z-index: 10;
+  box-shadow: 0px 6px 8px #bdbdbd;
+}
+
+.main-block,
+footer {
   font-family: "Shrikhand", serif;
 }
 
-header {
-  background-color: #FFFFFF;
-  min-height: 10vh;
-  max-height: fit-content;
+.logo {
+  box-shadow: 0px 6px 8px rgba(51, 51, 51, 0.15);
+  width: 100%;
+  height: 100%;
+  z-index: 1;
 }
 
-main {
-  background-color: antiquewhite;
-  min-height: 80vh;
-  max-height: fit-content;
+h1 {
+  font-size: 30px;
+}
+
+.map {
+  width: 100%;
+  align-items: flex-start;
+  padding: 15px;
+  background: #eaeaea;
+}
+
+.map-marker {
+  width: 14px;
+  margin-right: 18px;
+}
+
+.banner {
+  height: 288px;
+  padding: 20px;
+  background-color: #f6f6f6;
+  width: 100%;
+}
+
+.banner, .banner__content {
+  flex-direction: column;
+  text-align: center;
+  margin: auto;
+}
+
+.banner h2 {
+  font-size: 23px;
+  max-width: 250px;
+  margin: 20px;
+}
+
+.banner__content p {
+  font-weight: 300;
+  max-width: 300px;
+}
+
+.banner__btn {
+  color: #f6f6f6;
+  padding: 18px 22px;
+  box-shadow: 0px 6px 8px #bdbdbd;
+  background: #9356DC;
+  background: -moz-linear-gradient(top, #FF79DA 0%, #9356DC 100%);
+  background: -webkit-linear-gradient(top, #FF79DA 0%, #9356DC 100%);
+  background: linear-gradient(to bottom, #FF79DA 0%, #9356DC 100%);
+  -webkit-border-radius: 28px;
+  -moz-border-radius: 28px;
+  border-radius: 28px;
+  margin: 20px 0 40px;
+  max-width: 218px;
+}
+.banner__btn:hover {
+  background: -moz-linear-gradient(top, #9356DC 0%, #FF79DA 100%);
+  background: -webkit-linear-gradient(top, #9356DC 0%, #FF79DA 100%);
+  background: linear-gradient(to bottom, #9356DC 0%, #FF79DA 100%);
+}
+
+.main-block img {
+  width: 100%;
+  height: auto;
 }
 
 footer {
-  background-color: aliceblue;
-  min-height: 10vh;
-  max-height: fit-content;
+  background-color: #353535;
+  height: 197px;
+  padding: 20px 25px;
+  text-align: left;
+}
+
+.footer__content {
+  margin-top: 20px;
+}
+
+footer img {
+  height: 18px;
+  margin-right: 10px;
+}
+
+footer a {
+  display: flex;
+  margin-top: 3px;
+}
+
+footer p {
+  color: #f6f6f6;
 }
 
 /*# sourceMappingURL=style.css.map */

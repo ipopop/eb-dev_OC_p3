@@ -6,30 +6,52 @@
 $primary: #9356DC;
 $secondary: #FF79DA;
 $tertiary: #99E2D0;
+$darkgrey: #353535;
+$dark: #333;
+$light: rgba(255, 255, 255, 0.75);
+$xtra-light: #f6f6f6;
+$shadow: 0px 6px 8px #bdbdbd;
 
 /* ---- reset & common styles ---- */
-*, ::before, ::after {
+*,
+::before,
+::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-:focus{
+:focus {
     outline: none;
 }
 
 html {
     line-height: 1.5rem;
-    color: black;
+    color: $dark;
     scroll-behavior: smooth;
 }
 
-html, input#search__input, button {
+html,
+input#search__input,
+button,
+p {
     font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
 }
 
-body, ul, h1, h2, h3, p, button, div, a, a:visited, a:hover {
+body,
+ul,
+h1,
+h2,
+h3,
+p,
+button,
+div,
+a,
+a:visited,
+a:hover {
     text-decoration: none;
+    color: $dark;
 }
 
 main {
@@ -40,16 +62,22 @@ main {
 /* ---- end reset & common styles ---- */
 
 /* ---- basic HTML elements ---- */
-h1, h2 {
+h1, h2, h3 {
+    font-weight: 700;
+}
+
+h2 {
     font-size: 1.33rem;
+
 }
 
 h3 {
     font-size: 1.125rem;
 }
 
-a, button, .card {
-    color: black;
+a,
+button,
+.card {
     transform: scale(1);
     transition: all .5s cubic-bezier(.25, .45, .45, .95)
 }
@@ -68,35 +96,158 @@ img {
     image-rendering: auto;
 }
 
-button {
-    background: white;
+.btn {
     cursor: pointer;
     font-size: 1rem;
     border: none;
+    text-decoration: none;
+    text-align: center;
+}
+/* ---- end basic HTML elements ---- */
+
+/* ---- flex center ---- */
+.h-center {
+    display: flex;
+    justify-content: center;
 }
 
-// page parts
+.v-center {
+    display: flex;
+    align-items: center;
+}
+/* ---- end flex center ---- */
 
-header, main, footer {
+.grid-center {
     display: grid;
     place-items: center;
+}
+
+/* ---- placeholder img & icons width & height ---- */
+.img {
+    width: 95px;
+    height: 45px;
+}
+
+.fa-ico {
+    width: 20.8px;
+}
+/* ---- end placeholder img & icons width & height ---- */
+
+// page parts
+header {
+    position: sticky;
+    top: 0;
+    background-color: $light;
+    min-height: 64px;
+    z-index: 10;
+    box-shadow: $shadow;
+}
+
+.main-block,
+footer {
     font-family: 'Shrikhand', serif;
 }
 
-header {
-    background-color: #FFFFFF;
-    min-height: 10vh;
-    max-height: fit-content;
+// header
+.logo {
+    box-shadow: 0px 6px 8px rgba(51, 51, 51, 0.15);
+    width: 100%;
+    height: 100%;
+    z-index: 1;
 }
 
-main {
-    background-color: antiquewhite;
-    min-height: 80vh;
-    max-height: fit-content;   
+h1 {
+    font-size: 30px;
 }
 
+
+// map zone
+.map {
+    width: 100%;
+    align-items: flex-start;
+    padding: 15px;
+    background: #eaeaea;
+}
+
+.map-marker {
+    width: 14px;
+    margin-right: 18px;
+}
+
+// banner
+.banner {
+    height: 288px;
+    padding: 20px;
+    background-color: $xtra-light;
+    width: 100%;
+}
+
+.banner, .banner__content {
+    flex-direction: column;
+    text-align: center;
+    margin: auto;
+}
+
+.banner h2 {
+    font-size: 23px;
+    max-width: 250px;
+    margin: 20px;
+}
+
+.banner__content p {
+    font-weight: 300;
+    max-width: 300px;
+}
+
+.banner__btn {
+    color: $xtra-light;
+    padding: 18px 22px;
+    box-shadow: $shadow;
+    background: $primary;
+    background: -moz-linear-gradient(top, $secondary 0%, $primary 100%);
+    background: -webkit-linear-gradient(top, $secondary 0%, $primary 100%);
+    background: linear-gradient(to bottom, $secondary 0%, $primary 100%);
+    -webkit-border-radius: 28px;
+    -moz-border-radius: 28px;
+    border-radius: 28px;
+    margin: 20px 0 40px;
+    max-width: 218px;
+
+    &:hover {
+        background: -moz-linear-gradient(top, $primary 0%, $secondary 100%);
+        background: -webkit-linear-gradient(top, $primary 0%, $secondary 100%);
+        background: linear-gradient(to bottom, $primary 0%, $secondary 100%);
+    }
+}
+
+// main block
+.main-block img {
+    width: 100%;
+    height: auto;
+}
+
+// footer
 footer {
-    background-color: aliceblue;
-    min-height: 10vh;
-    max-height: fit-content;
+    background-color: $darkgrey;
+    height: 197px;
+    padding: 20px 25px;
+    text-align: left;
+}
+
+.footer__content {
+    margin-top: 20px;
+}
+
+footer img {
+    height: 18px;
+    margin-right: 10px;
+}
+
+footer a {
+    display: flex;
+    margin-top: 3px;
+}
+
+footer p {
+    color: $xtra-light;
 }
