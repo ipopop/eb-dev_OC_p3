@@ -185,6 +185,12 @@ footer {
   z-index: 1;
 }
 
+.logo span svg {
+  position: absolute;
+  left: -45px;
+  height: 1.4rem;
+}
+
 .logo svg {
   width: 165px;
 }
