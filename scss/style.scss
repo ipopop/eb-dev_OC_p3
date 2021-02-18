@@ -212,8 +212,6 @@ h1 {
     max-width: 300px;
 }
 
-
-
 .banner__btn {
     box-shadow: $shadow;
     background: $primary;
@@ -223,7 +221,7 @@ h1 {
     -webkit-border-radius: 28px;
     -moz-border-radius: 28px;
     border-radius: 28px;
-    margin: 20px 0 40px;
+    margin: 20px auto 40px;
     max-width: 218px;
     
     & a {
