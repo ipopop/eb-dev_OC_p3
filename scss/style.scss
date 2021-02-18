@@ -78,11 +78,8 @@ h3 {
     font-size: 1.125rem;
 }
 
-a,
-button,
-.card {
-    transform: scale(1);
-    transition: all .5s cubic-bezier(.25, .45, .45, .95)
+a, button, .banner__btn, .card {
+    transition: all .2s cubic-bezier(.25, .45, .45, .95)
 }
 
 li {
@@ -182,10 +179,13 @@ h1 {
 }
 
 // banner
+.banner, .restau {
+    background-color: $xtra-light;
+}
+
 .banner {
     height: 288px;
     padding: 20px;
-    background-color: $xtra-light;
     width: 100%;
 }
 
@@ -228,11 +228,11 @@ h1 {
 }
 
 // nav
-nav {
+nav, .restau {
     padding: 68px 20px ;
 }
 
-.nav {
+.nav, .restau {
     flex-direction: column;
 }
 
@@ -282,10 +282,55 @@ nav {
     font-weight: bold;
 }
 
-// main block
-.main-block img {
+// restau
+.restau {
     width: 100%;
     height: auto;
+}
+
+.cards {
+    flex-direction: column;
+}
+
+.card {
+    margin-top: 20px;
+    width: 335px;
+    height: 252px;
+    background: white;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.card__img {
+    width: 100%;
+    height: 175px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 335px;
+}
+
+.restau-1 {
+    background-image: url(../assets/img/restau/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
+}
+
+.restau-2 {
+    background-image: url(../assets/img/restau/toa-heftiba-DQKerTsQwi0-unsplash.jpg);
+}
+
+.restau-3 {
+    background-image: url(../assets/img/restau/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg);
+}
+
+.restau-4 {
+    background-image: url(../assets/img/restau/stil-u2Lp8tXIcjw-unsplash.jpg);
+}
+
+.card__content {
+    padding: 14px;
+}
+
+.card__content p {
+    font-weight: lighter;
 }
 
 // footer
