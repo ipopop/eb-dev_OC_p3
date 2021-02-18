@@ -6,11 +6,13 @@
 $primary: #9356DC;
 $secondary: #FF79DA;
 $tertiary: #99E2D0;
+$prim-light: #F5EDFF;
+$midgrey: #7e7e7E;
 $darkgrey: #353535;
 $dark: #333;
 $light: rgba(255, 255, 255, 0.75);
 $xtra-light: #f6f6f6;
-$shadow: 0px 6px 8px #bdbdbd;
+$shadow: 0px 6px 8px #e2e2e2;
 
 /* ---- reset & common styles ---- */
 *,
@@ -37,6 +39,7 @@ button,
 p {
     font-family: 'Roboto', sans-serif;
     font-size: 1rem;
+    color: $dark;
 }
 
 body,
@@ -67,7 +70,7 @@ h1, h2, h3 {
 }
 
 h2 {
-    font-size: 1.33rem;
+    font-size: 1.5rem;
 
 }
 
@@ -156,6 +159,10 @@ footer {
     z-index: 1;
 }
 
+.logo svg {
+    width: 165px;
+}
+
 h1 {
     font-size: 30px;
 }
@@ -220,6 +227,61 @@ h1 {
     }
 }
 
+// nav
+nav {
+    padding: 68px 20px ;
+}
+
+.nav {
+    flex-direction: column;
+}
+
+.nav a {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    color: $midgrey;
+    padding: 25px;
+    margin-top: 20px;
+    border-radius: 20px;
+    width: 324px;
+    background: $xtra-light;
+    box-shadow: $shadow;
+    
+    &:hover {
+        color: $primary;
+        background: $prim-light;
+    }
+}
+
+.nav a span {
+    content: '';
+    max-width: 24px;
+    max-height: 24px;
+    border-radius: 50%;
+    position: absolute;
+    background: $primary;
+    font-size: .8rem;
+    color: $xtra-light;
+    padding: 1px 8px 22px;
+    left: -10px;
+}
+
+.nav svg {
+    width: .86rem;
+    margin-right: 25px;
+    margin-left: 34px;
+}
+
+.nav a:nth-last-child(-n+2) svg {
+    width: 1.1rem;
+
+}
+
+.nav p {
+    font-weight: bold;
+}
+
 // main block
 .main-block img {
     width: 100%;
@@ -234,20 +296,31 @@ footer {
     text-align: left;
 }
 
+footer svg {
+    height: 18px;
+}
+
 .footer__content {
     margin-top: 20px;
 }
 
-footer img {
-    height: 18px;
-    margin-right: 10px;
+.footer__content svg {
+    width: 14px;
+    height: 1rem;
+    margin-right: 14px;
 }
+.footer__content > a:nth-child(2) svg {
+    height: 14px;
+    width: 18px;
+    transform: rotate(-10deg);
+    margin-right: 8px;
+    }
 
 footer a {
     display: flex;
     margin-top: 3px;
 }
 
-footer p {
+footer svg, footer p {
     color: $xtra-light;
 }
