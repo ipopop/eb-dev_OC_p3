@@ -212,9 +212,9 @@ h1 {
     max-width: 300px;
 }
 
+
+
 .banner__btn {
-    color: $xtra-light;
-    padding: 18px 22px;
     box-shadow: $shadow;
     background: $primary;
     background: -moz-linear-gradient(top, $secondary 0%, $primary 100%);
@@ -225,6 +225,15 @@ h1 {
     border-radius: 28px;
     margin: 20px 0 40px;
     max-width: 218px;
+    
+    & a {
+        display: inline-block;
+        color: $xtra-light;
+        padding: 18px 22px;
+        -webkit-border-radius: 28px;
+        -moz-border-radius: 28px;
+        border-radius: 28px;
+    }
 
     &:hover {
         background: -moz-linear-gradient(top, $primary 0%, $secondary 100%);
