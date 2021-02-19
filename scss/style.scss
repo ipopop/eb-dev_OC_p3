@@ -351,7 +351,10 @@ footer {
     background-color: $darkgrey;
     height: 197px;
     padding: 20px 25px;
-    text-align: left;
+}
+
+.footer__box {
+    width: 375px;
 }
 
 footer svg {
