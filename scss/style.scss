@@ -19,6 +19,33 @@ $xtra-light: #f6f6f6;
 $clear: #FFFFFF;
 $shadow: 0px 5px 7px #dadada;
 
+@mixin gradientAnimation( $start, $end, $transTime ){
+    background-size: 100%;
+    background-image: linear-gradient($start, $end);
+    position: relative;
+    z-index: 100;
+    &:before {
+        background-image: linear-gradient($end, $start);
+        content: "";
+        display: block;
+        height: 100%;
+        position: absolute;
+        top: 0; left: 0;
+        opacity: 0;
+        width: 100%;
+        z-index: -100;
+        -webkit-border-radius: 28px;
+        // -moz-border-radius: 28px;
+        border-radius: 28px;
+        transition: opacity $transTime;
+    }
+    &:hover {
+        &:before {
+            opacity: 1;
+        }
+    }
+}
+
 /* ---- reset & common styles ---- */
 *,
 ::before,
@@ -83,8 +110,8 @@ h3 {
     font-size: 1.125rem;
 }
 
-a, button, .banner__btn, .card {
-    transition: all .2s cubic-bezier(.25, .45, .45, .95)
+a, .button, .card, :hover {
+    transition: all .2s ease-in-out;
 }
 
 li {
@@ -241,10 +268,11 @@ header img {
 
 .banner__btn {
     box-shadow: $shadow;
-    background: $primary;
-    background: -moz-linear-gradient(top, $secondary 0%, $primary 100%);
-    background: -webkit-linear-gradient(top, $secondary 0%, $primary 100%);
-    background: linear-gradient(to bottom, $secondary 0%, $primary 100%);
+    // background: $primary;
+    // background: -moz-linear-gradient(top, $secondary 0%, $primary 100%);
+    // background: -webkit-linear-gradient(top, $secondary 0%, $primary 100%);
+    // background: linear-gradient(to bottom, $secondary 0%, $primary 100%);
+    @include gradientAnimation($secondary, $primary, .2s);
     -webkit-border-radius: 28px;
     // -moz-border-radius: 28px;
     border-radius: 28px;
@@ -261,9 +289,10 @@ header img {
     }
 
     &:hover {
-        background: -moz-linear-gradient(top, $primary 0%, $secondary 100%);
-        background: -webkit-linear-gradient(top, $primary 0%, $secondary 100%);
-        background: linear-gradient(to bottom, $primary 0%, $secondary 100%);
+        // background: -moz-linear-gradient(top, $primary 0%, $secondary 100%);
+        // background: -webkit-linear-gradient(top, $primary 0%, $secondary 100%);
+        // background: linear-gradient(to bottom, $primary 0%, $secondary 100%);
+        @include gradientAnimation($secondary, $primary, .2s);
     }
 }
 
@@ -339,6 +368,10 @@ nav, .restau {
     background: $clear;
     border-radius: 1rem;
     overflow: hidden;
+    
+    &:hover {
+        box-shadow: $shadow;
+    }
 }
 
 .card__img {
@@ -380,8 +413,12 @@ footer {
     padding: 20px 25px;
 }
 
-footer i, footer h2, footer p {
+footer a, footer i, footer h2, footer p {
     color: $xtra-light;
+    
+    &:hover {
+        color: $primary;
+    }
 }
 
 .footer__box {
@@ -393,7 +430,7 @@ footer i, footer h2, footer p {
     margin-top: 1rem;
 }
 
-footer a {
+.footer__content a {
     display: flex;
     margin-top: 3px;
 }

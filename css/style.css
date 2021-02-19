@@ -5926,8 +5926,8 @@ h3 {
   font-size: 1.125rem;
 }
 
-a, button, .banner__btn, .card {
-  transition: all 0.2s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+a, .button, .card, :hover {
+  transition: all 0.2s ease-in-out;
 }
 
 li {
@@ -6080,14 +6080,32 @@ header img {
 
 .banner__btn {
   box-shadow: 0px 5px 7px #dadada;
-  background: #9356DC;
-  background: -moz-linear-gradient(top, #FF79DA 0%, #9356DC 100%);
-  background: -webkit-linear-gradient(top, #FF79DA 0%, #9356DC 100%);
-  background: linear-gradient(to bottom, #FF79DA 0%, #9356DC 100%);
+  background-size: 100%;
+  background-image: linear-gradient(#FF79DA, #9356DC);
+  position: relative;
+  z-index: 100;
   -webkit-border-radius: 28px;
   border-radius: 28px;
   margin: 20px auto 40px;
   max-width: 218px;
+}
+.banner__btn:before {
+  background-image: linear-gradient(#9356DC, #FF79DA);
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 100%;
+  z-index: -100;
+  -webkit-border-radius: 28px;
+  border-radius: 28px;
+  transition: opacity 0.2s;
+}
+.banner__btn:hover:before {
+  opacity: 1;
 }
 .banner__btn a {
   display: inline-block;
@@ -6097,9 +6115,28 @@ header img {
   border-radius: 28px;
 }
 .banner__btn:hover {
-  background: -moz-linear-gradient(top, #9356DC 0%, #FF79DA 100%);
-  background: -webkit-linear-gradient(top, #9356DC 0%, #FF79DA 100%);
-  background: linear-gradient(to bottom, #9356DC 0%, #FF79DA 100%);
+  background-size: 100%;
+  background-image: linear-gradient(#FF79DA, #9356DC);
+  position: relative;
+  z-index: 100;
+}
+.banner__btn:hover:before {
+  background-image: linear-gradient(#9356DC, #FF79DA);
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 100%;
+  z-index: -100;
+  -webkit-border-radius: 28px;
+  border-radius: 28px;
+  transition: opacity 0.2s;
+}
+.banner__btn:hover:hover:before {
+  opacity: 1;
 }
 
 nav, .restau {
@@ -6172,6 +6209,9 @@ nav, .restau {
   border-radius: 1rem;
   overflow: hidden;
 }
+.card:hover {
+  box-shadow: 0px 5px 7px #dadada;
+}
 
 .card__img {
   width: 100%;
@@ -6211,8 +6251,11 @@ footer {
   padding: 20px 25px;
 }
 
-footer i, footer h2, footer p {
+footer a, footer i, footer h2, footer p {
   color: #f6f6f6;
+}
+footer a:hover, footer i:hover, footer h2:hover, footer p:hover {
+  color: #9356DC;
 }
 
 .footer__box {
@@ -6224,7 +6267,7 @@ footer i, footer h2, footer p {
   margin-top: 1rem;
 }
 
-footer a {
+.footer__content a {
   display: flex;
   margin-top: 3px;
 }
