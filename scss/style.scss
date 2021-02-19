@@ -1,20 +1,23 @@
+// @import "libs/reset.scss"; /* minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */
+
 @import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&family=Shrikhand&display=swap');
 
-@import "libs/reset.scss"; /* minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */
-@import "libs/fa/fontawesome.scss";
-@import "libs/fa/solid.scss";
+@import "libs/fa/fontawesome.scss"; /* font awesome 5 free */
+@import "libs/fa/solid.scss"; /* font awesome 5 free */
 
 $primary: #9356DC;
 $secondary: #FF79DA;
 $tertiary: #99E2D0;
 $prim-light: #F5EDFF;
-$midgrey: #7e7e7E;
-$darkgrey: #353535;
+$darker: #000000;
 $dark: #333;
-$light: rgba(255, 255, 255, 0.75);
+$darkgrey: #353535;
+$midgrey: #7e7e7E;
+$light: #eaeaea;
 $xtra-light: #f6f6f6;
-$shadow: 0px 6px 8px #e2e2e2;
+$clear: #FFFFFF;
+$shadow: 0px 5px 7px #dadada;
 
 /* ---- reset & common styles ---- */
 *,
@@ -71,7 +74,7 @@ h1, h2, h3 {
     font-weight: 700;
 }
 
-h2 {
+h1, h2 {
     font-size: 1.5rem;
 
 }
@@ -114,7 +117,7 @@ img {
 }
 /* ---- end basic HTML elements ---- */
 
-/* ---- flex center ---- */
+/* ---- center ---- */
 .h-center {
     display: flex;
     justify-content: center;
@@ -124,34 +127,21 @@ img {
     display: flex;
     align-items: center;
 }
-/* ---- end flex center ---- */
 
-.grid-center {
+.center {
     display: grid;
     place-items: center;
 }
+/* ---- end center ---- */
 
 /* ---- placeholder img & icons width & height ---- */
 .img {
     width: 95px;
     height: 45px;
 }
-
-.fa-ico {
-    width: 20.8px;
-}
 /* ---- end placeholder img & icons width & height ---- */
 
 // page parts
-header {
-    position: sticky;
-    top: 0;
-    background-color: $light;
-    min-height: 64px;
-    z-index: 10;
-    box-shadow: $shadow;
-}
-
 .main-block,
 footer {
     font-family: 'Shrikhand', serif;
@@ -163,6 +153,12 @@ header {
     width: 100%;
     height: 100%;
     z-index: 1;
+    position: sticky;
+    top: 0;
+    background-color: $clear;
+    min-height: 64px;
+    z-index: 10;
+    box-shadow: $shadow;
 }
 
 header a {
@@ -179,22 +175,40 @@ header img {
     max-width: 165px;
 }
 
-h1 {
-    font-size: 30px;
-}
-
-
-// map zone
-.map {
+// map-search form
+.map-search {
     width: 100%;
     align-items: flex-start;
     padding: 15px;
-    background: #eaeaea;
+    background: $light;
 }
 
-.map-marker {
-    width: 14px;
-    margin-right: 18px;
+.map-search form {
+    max-width: 160px;
+}
+
+.map-search input {
+    background: transparent;
+    outline: none;
+    border: none;
+}
+
+::placeholder {
+    font-style: italic;
+    opacity: .4;
+    text-overflow: ellipsis;
+    background: $light;
+}
+
+#search__input:focus-visible::placeholder {
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.2s ease-in-out;
+}
+
+#search__input:focus-visible {
+    outline: none;
+    background: white;
 }
 
 // banner
@@ -214,7 +228,7 @@ h1 {
     margin: auto;
 }
 
-.banner h2 {
+.banner h1 {
     font-size: 23px;
     max-width: 250px;
     margin: 20px;
@@ -322,7 +336,7 @@ nav, .restau {
     margin-top: 20px;
     width: 335px;
     height: 252px;
-    background: white;
+    background: $clear;
     border-radius: 1rem;
     overflow: hidden;
 }
@@ -366,8 +380,13 @@ footer {
     padding: 20px 25px;
 }
 
+footer i, footer h2, footer p {
+    color: $xtra-light;
+}
+
 .footer__box {
-    width: 375px;
+    width: 100%;
+    max-width: 375px;
 }
 
 .footer__content {
@@ -393,7 +412,3 @@ footer i {
     font-size: .8rem;
     margin-right: 13px;
     }
-
-footer i, footer h2, footer p {
-    color: $xtra-light;
-}

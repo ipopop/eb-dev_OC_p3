@@ -1,52 +1,6 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&family=Shrikhand&display=swap");
-/*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */
-html, body, p, ol, ul, li, dl, dt, dd, blockquote, figure, fieldset, legend, textarea, pre, iframe, hr, h1, h2, h3, h4, h5, h6 {
-  margin: 0;
-  padding: 0;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-size: 100%;
-  font-weight: normal;
-}
-
-ul {
-  list-style: none;
-}
-
-button, input, select {
-  margin: 0;
-}
-
-html {
-  box-sizing: border-box;
-}
-
-*, *::before, *::after {
-  box-sizing: inherit;
-}
-
-img, video {
-  height: auto;
-  max-width: 100%;
-}
-
-iframe {
-  border: 0;
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-td, th {
-  padding: 0;
-}
-
-/* minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */
 /*!
  * Font Awesome Free 5.15.2 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
@@ -5889,6 +5843,7 @@ readers do not read off random characters that represent icons */
   content: "";
 }
 
+/* font awesome 5 free */
 /*!
  * Font Awesome Free 5.15.2 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
@@ -5907,6 +5862,7 @@ readers do not read off random characters that represent icons */
   font-weight: 900;
 }
 
+/* font awesome 5 free */
 /* ---- reset & common styles ---- */
 *,
 ::before,
@@ -5962,7 +5918,7 @@ h1, h2, h3 {
   font-weight: 700;
 }
 
-h2 {
+h1, h2 {
   font-size: 1.5rem;
 }
 
@@ -6004,7 +5960,7 @@ img {
 }
 
 /* ---- end basic HTML elements ---- */
-/* ---- flex center ---- */
+/* ---- center ---- */
 .h-center {
   display: flex;
   justify-content: center;
@@ -6015,32 +5971,19 @@ img {
   align-items: center;
 }
 
-/* ---- end flex center ---- */
-.grid-center {
+.center {
   display: grid;
   place-items: center;
 }
 
+/* ---- end center ---- */
 /* ---- placeholder img & icons width & height ---- */
 .img {
   width: 95px;
   height: 45px;
 }
 
-.fa-ico {
-  width: 20.8px;
-}
-
 /* ---- end placeholder img & icons width & height ---- */
-header {
-  position: sticky;
-  top: 0;
-  background-color: rgba(255, 255, 255, 0.75);
-  min-height: 64px;
-  z-index: 10;
-  box-shadow: 0px 6px 8px #e2e2e2;
-}
-
 .main-block,
 footer {
   font-family: "Shrikhand", serif;
@@ -6051,6 +5994,12 @@ header {
   width: 100%;
   height: 100%;
   z-index: 1;
+  position: sticky;
+  top: 0;
+  background-color: #FFFFFF;
+  min-height: 64px;
+  z-index: 10;
+  box-shadow: 0px 5px 7px #dadada;
 }
 
 header a {
@@ -6067,20 +6016,39 @@ header img {
   max-width: 165px;
 }
 
-h1 {
-  font-size: 30px;
-}
-
-.map {
+.map-search {
   width: 100%;
   align-items: flex-start;
   padding: 15px;
   background: #eaeaea;
 }
 
-.map-marker {
-  width: 14px;
-  margin-right: 18px;
+.map-search form {
+  max-width: 160px;
+}
+
+.map-search input {
+  background: transparent;
+  outline: none;
+  border: none;
+}
+
+::placeholder {
+  font-style: italic;
+  opacity: 0.4;
+  text-overflow: ellipsis;
+  background: #eaeaea;
+}
+
+#search__input:focus-visible::placeholder {
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.2s ease-in-out;
+}
+
+#search__input:focus-visible {
+  outline: none;
+  background: white;
 }
 
 .banner, .restau {
@@ -6099,7 +6067,7 @@ h1 {
   margin: auto;
 }
 
-.banner h2 {
+.banner h1 {
   font-size: 23px;
   max-width: 250px;
   margin: 20px;
@@ -6111,7 +6079,7 @@ h1 {
 }
 
 .banner__btn {
-  box-shadow: 0px 6px 8px #e2e2e2;
+  box-shadow: 0px 5px 7px #dadada;
   background: #9356DC;
   background: -moz-linear-gradient(top, #FF79DA 0%, #9356DC 100%);
   background: -webkit-linear-gradient(top, #FF79DA 0%, #9356DC 100%);
@@ -6152,7 +6120,7 @@ nav, .restau {
   border-radius: 20px;
   width: 324px;
   background: #f6f6f6;
-  box-shadow: 0px 6px 8px #e2e2e2;
+  box-shadow: 0px 5px 7px #dadada;
 }
 .nav a:hover {
   color: #9356DC;
@@ -6200,7 +6168,7 @@ nav, .restau {
   margin-top: 20px;
   width: 335px;
   height: 252px;
-  background: white;
+  background: #FFFFFF;
   border-radius: 1rem;
   overflow: hidden;
 }
@@ -6243,8 +6211,13 @@ footer {
   padding: 20px 25px;
 }
 
+footer i, footer h2, footer p {
+  color: #f6f6f6;
+}
+
 .footer__box {
-  width: 375px;
+  width: 100%;
+  max-width: 375px;
 }
 
 .footer__content {
@@ -6269,10 +6242,6 @@ footer i {
 .footer__content > a:nth-child(2) i {
   font-size: 0.8rem;
   margin-right: 13px;
-}
-
-footer i, footer h2, footer p {
-  color: #f6f6f6;
 }
 
 /*# sourceMappingURL=style.css.map */
