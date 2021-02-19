@@ -2,6 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&family=Shrikhand&display=swap');
 
 @import "libs/reset.scss"; /* minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */
+@import "libs/fa/fontawesome.scss";
+@import "libs/fa/solid.scss";
 
 $primary: #9356DC;
 $secondary: #FF79DA;
@@ -103,6 +105,13 @@ img {
     text-decoration: none;
     text-align: center;
 }
+
+.fa, .fas {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 400;
+    font-style: normal;
+    margin-right: 1rem;
+}
 /* ---- end basic HTML elements ---- */
 
 /* ---- flex center ---- */
@@ -156,14 +165,14 @@ footer {
     z-index: 1;
 }
 
-.logo span svg {
+.logo span img {
     position: absolute;
     left: -45px;
     height: 1.4rem;
 }
 
-.logo svg {
-    width: 165px;
+.logo img {
+    max-width: 165px;
 }
 
 h1 {
@@ -219,7 +228,7 @@ h1 {
     background: -webkit-linear-gradient(top, $secondary 0%, $primary 100%);
     background: linear-gradient(to bottom, $secondary 0%, $primary 100%);
     -webkit-border-radius: 28px;
-    -moz-border-radius: 28px;
+    // -moz-border-radius: 28px;
     border-radius: 28px;
     margin: 20px auto 40px;
     max-width: 218px;
@@ -229,7 +238,7 @@ h1 {
         color: $xtra-light;
         padding: 18px 22px;
         -webkit-border-radius: 28px;
-        -moz-border-radius: 28px;
+        // -moz-border-radius: 28px;
         border-radius: 28px;
     }
 
@@ -280,15 +289,15 @@ nav, .restau {
     left: -10px;
 }
 
-.nav svg {
+.nav i {
     width: .86rem;
     margin-right: 25px;
-    margin-left: 34px;
+    margin-left: 22px;
+    font-size: 1.4rem;
 }
 
-.nav a:nth-last-child(-n+2) svg {
-    width: 1.1rem;
-
+.nav a:nth-last-child(-n+2) i {
+    font-size: 1rem;
 }
 
 .nav p {
@@ -357,31 +366,30 @@ footer {
     width: 375px;
 }
 
-footer svg {
-    height: 18px;
-}
-
 .footer__content {
-    margin-top: 20px;
+    margin-top: 1rem;
 }
-
-.footer__content svg {
-    width: 14px;
-    height: 1rem;
-    margin-right: 14px;
-}
-.footer__content > a:nth-child(2) svg {
-    height: 14px;
-    width: 18px;
-    transform: rotate(-10deg);
-    margin-right: 8px;
-    }
 
 footer a {
     display: flex;
     margin-top: 3px;
 }
 
-footer svg, footer p {
+footer h2 {
+    font-size: 1.1rem;
+    letter-spacing: 0.034em;
+    font-weight: normal;
+}
+
+footer i {
+    font-size: 1rem;
+}
+
+.footer__content > a:nth-child(2) i {
+    font-size: .8rem;
+    margin-right: 13px;
+    }
+
+footer i, footer h2, footer p {
     color: $xtra-light;
 }
