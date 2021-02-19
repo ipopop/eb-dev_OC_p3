@@ -1,50 +1,29 @@
-// @import "libs/reset.scss"; /* minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */
-
 @import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&family=Shrikhand&display=swap');
 
 @import "libs/fa/fontawesome.scss"; /* font awesome 5 free */
 @import "libs/fa/solid.scss"; /* font awesome 5 free */
 
+@import "mixins/gradient-transition.scss"; /* smooth gradient transition */
+
 $primary: #9356DC;
+$prim-mid: #c896ff;
+$prim-light: #F5EDFF;
+
 $secondary: #FF79DA;
 $tertiary: #99E2D0;
-$prim-light: #F5EDFF;
+
 $darker: #000000;
 $dark: #333;
-$darkgrey: #353535;
-$midgrey: #7e7e7E;
+$dark-grey: #353535;
+$mid-grey: #7e7e7E;
 $light: #eaeaea;
 $xtra-light: #f6f6f6;
-$clear: #FFFFFF;
-$shadow: 0px 5px 7px #dadada;
+$lighter: #FFFFFF;
 
-@mixin gradientAnimation( $start, $end, $transTime ){
-    background-size: 100%;
-    background-image: linear-gradient($start, $end);
-    position: relative;
-    z-index: 100;
-    &:before {
-        background-image: linear-gradient($end, $start);
-        content: "";
-        display: block;
-        height: 100%;
-        position: absolute;
-        top: 0; left: 0;
-        opacity: 0;
-        width: 100%;
-        z-index: -100;
-        -webkit-border-radius: 28px;
-        // -moz-border-radius: 28px;
-        border-radius: 28px;
-        transition: opacity $transTime;
-    }
-    &:hover {
-        &:before {
-            opacity: 1;
-        }
-    }
-}
+$shadow: 0px 5px 7px #00000020;
+$hover-shadow: 0px 5px 14px #00000025;
+$txt-shadow: 0px 1px 1px #00000030;
 
 /* ---- reset & common styles ---- */
 *,
@@ -168,13 +147,13 @@ img {
 }
 /* ---- end placeholder img & icons width & height ---- */
 
-// page parts
+/* ---- page parts ---- */
 .main-block,
 footer {
     font-family: 'Shrikhand', serif;
 }
 
-// header
+/* ---- header ---- */
 header {
     box-shadow: 0px 6px 8px rgba(51, 51, 51, 0.15);
     width: 100%;
@@ -182,7 +161,7 @@ header {
     z-index: 1;
     position: sticky;
     top: 0;
-    background-color: $clear;
+    background-color: $lighter;
     min-height: 64px;
     z-index: 10;
     box-shadow: $shadow;
@@ -202,7 +181,7 @@ header img {
     max-width: 165px;
 }
 
-// map-search form
+/* ---- map-search form ---- */
 .map-search {
     width: 100%;
     align-items: flex-start;
@@ -218,6 +197,10 @@ header img {
     background: transparent;
     outline: none;
     border: none;
+    
+    &:hover {
+        background: $lighter;     
+    }
 }
 
 ::placeholder {
@@ -238,7 +221,7 @@ header img {
     background: white;
 }
 
-// banner
+/* ---- banner ---- */
 .banner, .restau {
     background-color: $xtra-light;
 }
@@ -268,35 +251,30 @@ header img {
 
 .banner__btn {
     box-shadow: $shadow;
-    // background: $primary;
-    // background: -moz-linear-gradient(top, $secondary 0%, $primary 100%);
-    // background: -webkit-linear-gradient(top, $secondary 0%, $primary 100%);
-    // background: linear-gradient(to bottom, $secondary 0%, $primary 100%);
     @include gradientAnimation($secondary, $primary, .2s);
     -webkit-border-radius: 28px;
-    // -moz-border-radius: 28px;
     border-radius: 28px;
+    border: solid 1px $light;
     margin: 20px auto 40px;
-    max-width: 218px;
+    max-width: 222px;
     
     & a {
         display: inline-block;
         color: $xtra-light;
         padding: 18px 22px;
         -webkit-border-radius: 28px;
-        // -moz-border-radius: 28px;
         border-radius: 28px;
     }
 
     &:hover {
-        // background: -moz-linear-gradient(top, $primary 0%, $secondary 100%);
-        // background: -webkit-linear-gradient(top, $primary 0%, $secondary 100%);
-        // background: linear-gradient(to bottom, $primary 0%, $secondary 100%);
         @include gradientAnimation($secondary, $primary, .2s);
+        border-color: $lighter;
+        box-shadow: $hover-shadow;
+        text-shadow: $txt-shadow;
     }
 }
 
-// nav
+/* ---- nav ---- */
 nav, .restau {
     padding: 68px 20px ;
 }
@@ -309,7 +287,7 @@ nav, .restau {
     position: relative;
     display: flex;
     justify-content: flex-start;
-    color: $midgrey;
+    color: $mid-grey;
     padding: 25px;
     margin-top: 20px;
     border-radius: 20px;
@@ -320,6 +298,7 @@ nav, .restau {
     &:hover {
         color: $primary;
         background: $prim-light;
+        box-shadow: $hover-shadow;
     }
 }
 
@@ -351,7 +330,7 @@ nav, .restau {
     font-weight: bold;
 }
 
-// restau
+/* ---- restaurants ---- */
 .restau {
     width: 100%;
     height: auto;
@@ -365,7 +344,7 @@ nav, .restau {
     margin-top: 20px;
     width: 335px;
     height: 252px;
-    background: $clear;
+    background: $lighter;
     border-radius: 1rem;
     overflow: hidden;
     
@@ -406,19 +385,19 @@ nav, .restau {
     font-weight: lighter;
 }
 
-// footer
+/* ---- footer ---- */
 footer {
-    background-color: $darkgrey;
+    background-color: $dark-grey;
     height: 197px;
     padding: 20px 25px;
 }
 
 footer a, footer i, footer h2, footer p {
     color: $xtra-light;
-    
-    &:hover {
-        color: $primary;
-    }
+}
+
+footer a:hover i, footer a:hover h2, footer a:hover p {
+    color: $prim-mid;
 }
 
 .footer__box {

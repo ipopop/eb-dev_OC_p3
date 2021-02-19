@@ -5863,6 +5863,7 @@ readers do not read off random characters that represent icons */
 }
 
 /* font awesome 5 free */
+/* smooth gradient transition */
 /* ---- reset & common styles ---- */
 *,
 ::before,
@@ -5984,11 +5985,13 @@ img {
 }
 
 /* ---- end placeholder img & icons width & height ---- */
+/* ---- page parts ---- */
 .main-block,
 footer {
   font-family: "Shrikhand", serif;
 }
 
+/* ---- header ---- */
 header {
   box-shadow: 0px 6px 8px rgba(51, 51, 51, 0.15);
   width: 100%;
@@ -5999,7 +6002,7 @@ header {
   background-color: #FFFFFF;
   min-height: 64px;
   z-index: 10;
-  box-shadow: 0px 5px 7px #dadada;
+  box-shadow: 0px 5px 7px #00000020;
 }
 
 header a {
@@ -6016,6 +6019,7 @@ header img {
   max-width: 165px;
 }
 
+/* ---- map-search form ---- */
 .map-search {
   width: 100%;
   align-items: flex-start;
@@ -6031,6 +6035,9 @@ header img {
   background: transparent;
   outline: none;
   border: none;
+}
+.map-search input:hover {
+  background: #FFFFFF;
 }
 
 ::placeholder {
@@ -6051,6 +6058,7 @@ header img {
   background: white;
 }
 
+/* ---- banner ---- */
 .banner, .restau {
   background-color: #f6f6f6;
 }
@@ -6079,15 +6087,17 @@ header img {
 }
 
 .banner__btn {
-  box-shadow: 0px 5px 7px #dadada;
+  box-shadow: 0px 5px 7px #00000020;
+  box-sizing: border-box;
   background-size: 100%;
   background-image: linear-gradient(#FF79DA, #9356DC);
   position: relative;
   z-index: 100;
   -webkit-border-radius: 28px;
   border-radius: 28px;
+  border: solid 1px #eaeaea;
   margin: 20px auto 40px;
-  max-width: 218px;
+  max-width: 222px;
 }
 .banner__btn:before {
   background-image: linear-gradient(#9356DC, #FF79DA);
@@ -6115,10 +6125,14 @@ header img {
   border-radius: 28px;
 }
 .banner__btn:hover {
+  box-sizing: border-box;
   background-size: 100%;
   background-image: linear-gradient(#FF79DA, #9356DC);
   position: relative;
   z-index: 100;
+  border-color: #FFFFFF;
+  box-shadow: 0px 5px 14px #00000025;
+  text-shadow: 0px 1px 1px #00000030;
 }
 .banner__btn:hover:before {
   background-image: linear-gradient(#9356DC, #FF79DA);
@@ -6139,6 +6153,7 @@ header img {
   opacity: 1;
 }
 
+/* ---- nav ---- */
 nav, .restau {
   padding: 68px 20px;
 }
@@ -6157,11 +6172,12 @@ nav, .restau {
   border-radius: 20px;
   width: 324px;
   background: #f6f6f6;
-  box-shadow: 0px 5px 7px #dadada;
+  box-shadow: 0px 5px 7px #00000020;
 }
 .nav a:hover {
   color: #9356DC;
   background: #F5EDFF;
+  box-shadow: 0px 5px 14px #00000025;
 }
 
 .nav a span {
@@ -6192,6 +6208,7 @@ nav, .restau {
   font-weight: bold;
 }
 
+/* ---- restaurants ---- */
 .restau {
   width: 100%;
   height: auto;
@@ -6210,7 +6227,7 @@ nav, .restau {
   overflow: hidden;
 }
 .card:hover {
-  box-shadow: 0px 5px 7px #dadada;
+  box-shadow: 0px 5px 7px #00000020;
 }
 
 .card__img {
@@ -6245,6 +6262,7 @@ nav, .restau {
   font-weight: lighter;
 }
 
+/* ---- footer ---- */
 footer {
   background-color: #353535;
   height: 197px;
@@ -6254,8 +6272,9 @@ footer {
 footer a, footer i, footer h2, footer p {
   color: #f6f6f6;
 }
-footer a:hover, footer i:hover, footer h2:hover, footer p:hover {
-  color: #9356DC;
+
+footer a:hover i, footer a:hover h2, footer a:hover p {
+  color: #c896ff;
 }
 
 .footer__box {
