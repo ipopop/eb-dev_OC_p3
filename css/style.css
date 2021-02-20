@@ -417,6 +417,7 @@ nav, .restau {
 
 .icon:before {
   font-family: "Font Awesome 5 Free";
+  font-style: normal;
   font-size: 2rem;
 }
 

@@ -376,17 +376,13 @@ nav, .restau {
     padding: 20px;
 }
 
-// span .heart {
-//     @include cssHeart($secondary, $primary);
-//     z-index: 10;
-// }
-
 .icon-heart {
     @include iconToggle("\f004", "\f004", lightgrey, pink, 400, 900);
 }
 
 .icon:before {
     font-family: 'Font Awesome 5 Free';
+    font-style: normal;
     font-size: 2rem;
 }
 
