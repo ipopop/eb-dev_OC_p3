@@ -1,0 +1,37 @@
+@mixin cssHeart( $start, $end ){
+    background-color: $start;
+    display: inline-block;
+    height: 50px;
+    margin: 0 10px;
+    position: relative;
+    top: 0;
+    transform: rotate(-45deg);
+    position: absolute; 
+    left: 45%; top: 45%;
+    width: 50px;
+      
+    &:before,
+    :after {
+        content: "";
+        background-color: $end;
+        border-radius: 50%;
+        height: 50px;
+        position: absolute;
+        width: 50px;
+    }
+      
+    :before {
+        top: -25px;
+        left: 0;
+    }
+      
+    :after {
+        left: 25px;
+        top: 0;
+    }
+}
+
+// usage
+.my-heart {
+    @include cssHeart(red, pink);
+  }

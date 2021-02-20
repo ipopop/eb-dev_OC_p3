@@ -1,0 +1,32 @@
+.my-heart {
+  background-color: red;
+  display: inline-block;
+  height: 50px;
+  margin: 0 10px;
+  position: relative;
+  top: 0;
+  transform: rotate(-45deg);
+  position: absolute;
+  left: 45%;
+  top: 45%;
+  width: 50px;
+}
+.my-heart:before,
+.my-heart :after {
+  content: "";
+  background-color: pink;
+  border-radius: 50%;
+  height: 50px;
+  position: absolute;
+  width: 50px;
+}
+.my-heart :before {
+  top: -25px;
+  left: 0;
+}
+.my-heart :after {
+  left: 25px;
+  top: 0;
+}
+
+/*# sourceMappingURL=heart.css.map */

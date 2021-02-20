@@ -1,7 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&family=Shrikhand&display=swap');
 
+@import url('../assets/icon/fontawesome.min.css?family=Font-Awesome-5');
+
 @import "mixins/gradient-transition.scss"; /* smooth gradient transition */
+@import "mixins/toggle.scss";
 
 $primary: #9356DC;
 $prim-mid: #c896ff;
@@ -13,7 +15,7 @@ $tertiary: #99E2D0;
 $darker: #000000;
 $dark: #333;
 $dark-grey: #353535;
-$mid-grey: #7e7e7E;
+$mid-grey: #ababab;
 $light: #eaeaea;
 $xtra-light: #f6f6f6;
 $lighter: #FFFFFF;
@@ -364,6 +366,56 @@ nav, .restau {
 
 .card__content {
     padding: 14px;
+    position: relative;
+}
+
+.card__content span {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 20px;
+}
+
+// span .heart {
+//     @include cssHeart($secondary, $primary);
+//     z-index: 10;
+// }
+
+.icon-heart {
+    @include iconToggle("\f004", "\f004", lightgrey, pink, 400, 900);
+}
+
+.icon:before {
+    font-family: 'Font Awesome 5 Free';
+    font-size: 2rem;
+}
+
+.toggle {
+    opacity: 0;
+    border: 0;
+    outline: none;
+    height: 100%;
+    width: 100%;
+    background: transparent;
+    position: absolute;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.fa-heart {
+    font-size: 2rem;
+    color: $mid-grey;
+
+    &:hover, :focus-visible {
+        color: $secondary;
+        background-color: linear-gradient($secondary, $primary);
+        font-weight:900;
+    }
+}
+
+.visually-hidden {
+    position: absolute;
+    left: -100vw;
 }
 
 .card__content p {

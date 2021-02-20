@@ -1,0 +1,13 @@
+@charset "UTF-8";
+.icon-heart .toggle ~ .icon:before {
+  content: "";
+  color: lightgrey;
+  font-weight: 400;
+}
+.icon-heart .toggle:checked ~ .icon:before {
+  content: "";
+  color: pink;
+  font-weight: 900;
+}
+
+/*# sourceMappingURL=toggle.css.map */
