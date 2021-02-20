@@ -397,7 +397,7 @@ nav, .restau {
   position: relative;
 }
 
-.card__content span {
+.card__content div {
   position: absolute;
   top: 0;
   right: 0;
