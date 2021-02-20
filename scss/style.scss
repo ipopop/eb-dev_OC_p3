@@ -380,6 +380,10 @@ nav, .restau {
     @include iconToggle("\f004", "\f004", lightgrey, pink, 400, 900);
 }
 
+.icon-heart:hover .toggle ~ .icon::before {
+    color: pink;
+}
+
 .icon:before {
     font-family: 'Font Awesome 5 Free';
     font-style: normal;
