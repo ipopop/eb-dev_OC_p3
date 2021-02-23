@@ -1,16 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&family=Shrikhand&display=swap');
 
-@import url('../assets/icon/fontawesome.min.css?family=Font-Awesome-5');
-
-@import "mixins/gradient-transition.scss"; /* smooth gradient transition */
+@import "mixins/gradient-animation.scss"; /* smooth gradient transition */
 @import "mixins/toggle.scss";
 
 $primary: #9356DC;
 $prim-mid: #c896ff;
 $prim-light: #F5EDFF;
-
-$secondary: #FF79DA;
-$tertiary: #99E2D0;
+$secondary: #ff7ad9;
+$sec-mid: #ffc2ed;
+$tertiary: #008766;
+$tert-mid: #99E2D0;
 
 $darker: #000000;
 $dark: #333;
@@ -67,7 +66,7 @@ a:hover {
     color: $dark;
 }
 
-main {
+main, footer {
     margin: 0 auto;
     width: 100vw;
     overflow-x: hidden;
@@ -136,6 +135,14 @@ img {
 }
 /* ---- end center ---- */
 
+/* ---- space-between ---- */
+.space-b {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
 /* ---- placeholder img & icons width & height ---- */
 .img {
     width: 95px;
@@ -145,7 +152,7 @@ img {
 
 /* ---- page parts ---- */
 .main-block,
-footer {
+h1, footer h2 {
     font-family: 'Shrikhand', serif;
 }
 
@@ -161,20 +168,20 @@ header {
     min-height: 64px;
     z-index: 110;
     box-shadow: $shadow;
-}
-
-header a {
-    width: 100%;
-    height: 100%;
-}
-
-header i {
-    position: absolute;
-    left: 45px;
-}
-
-header img {
-    max-width: 165px;
+    
+    & a {
+        width: 100%;
+        height: 100%;
+    }
+    
+    & i {
+        position: absolute;
+        left: 45px;
+    }
+    
+    & img {
+        max-width: 165px;
+    }
 }
 
 /* ---- map-search form ---- */
@@ -183,22 +190,22 @@ header img {
     align-items: flex-start;
     padding: 15px;
     background: $light;
-}
-
-.map-search form {
-    max-width: 160px;
-}
-
-.map-search input {
-    background: transparent;
-    outline: none;
-    border: none;
     
-    &:hover {
-        background: $lighter;     
+    & form {
+        max-width: 160px;
+    }
+    
+    & input {
+        background: transparent;
+        outline: none;
+        border: none;
+        
+        &:hover {
+            background: $lighter;     
+        }
     }
 }
-
+    
 ::placeholder {
     font-style: italic;
     opacity: .4;
@@ -226,18 +233,18 @@ header img {
     height: 288px;
     padding: 20px;
     width: 100%;
+
+    & h1 {
+        font-size: 23px;
+        max-width: 250px;
+        margin: 20px;
+    }
 }
 
 .banner, .banner__content {
     flex-direction: column;
     text-align: center;
     margin: auto;
-}
-
-.banner h1 {
-    font-size: 23px;
-    max-width: 250px;
-    margin: 20px;
 }
 
 .banner__content p {
@@ -279,51 +286,53 @@ nav, .restau {
     flex-direction: column;
 }
 
-.nav a {
-    position: relative;
-    display: flex;
-    justify-content: flex-start;
-    color: $mid-grey;
-    padding: 25px;
-    margin-top: 20px;
-    border-radius: 20px;
-    width: 324px;
-    background: $xtra-light;
-    box-shadow: $shadow;
-    
-    &:hover {
-        color: $primary;
-        background: $prim-light;
-        box-shadow: $hover-shadow;
+.nav {
+    & a {
+        position: relative;
+        display: flex;
+        justify-content: flex-start;
+        color: $mid-grey;
+        padding: 25px;
+        margin-top: 20px;
+        border-radius: 20px;
+        width: 324px;
+        background: $xtra-light;
+        box-shadow: $shadow;
+        
+        &:hover {
+            color: $primary;
+            background: $prim-light;
+            box-shadow: $hover-shadow;
+        }
     }
-}
-
-.nav a span {
-    content: '';
-    max-width: 24px;
-    max-height: 24px;
-    border-radius: 50%;
-    position: absolute;
-    background: $primary;
-    font-size: .8rem;
-    color: $xtra-light;
-    padding: 1px 8px 22px;
-    left: -10px;
-}
-
-.nav i {
-    width: .86rem;
-    margin-right: 25px;
-    margin-left: 22px;
-    font-size: 1.4rem;
-}
-
-.nav a:nth-last-child(-n+2) i {
-    font-size: 1rem;
-}
-
-.nav p {
-    font-weight: bold;
+    
+    & a span {
+        content: '';
+        max-width: 24px;
+        max-height: 24px;
+        border-radius: 50%;
+        position: absolute;
+        background: $primary;
+        font-size: .8rem;
+        color: $xtra-light;
+        padding: 1px 8px 22px;
+        left: -10px;
+    }
+    
+    & i {
+        width: .86rem;
+        margin-right: 25px;
+        margin-left: 22px;
+        font-size: 1.4rem;
+    }
+    
+    & a:nth-last-child(-n+2) i {
+        font-size: 1rem;
+    }
+    
+    & p {
+        font-weight: bold;
+    }
 }
 
 /* ---- restaurants ---- */
@@ -338,8 +347,9 @@ nav, .restau {
 
 .card {
     margin-top: 20px;
+    padding-bottom: 2px;
     width: 335px;
-    height: 252px;
+    max-height: 252px;
     background: $lighter;
     border-radius: 1rem;
     overflow: hidden;
@@ -354,10 +364,11 @@ nav, .restau {
     width: 100%;
     height: 175px;
     overflow: hidden;
-}
-.card__img img {
-    position: absolute;
-    bottom: 0;
+
+    & img {
+        position: absolute;
+        bottom: 0;
+    }
 }
 
 .restau-3 img {
@@ -370,10 +381,10 @@ nav, .restau {
     width: 80px;
     height: 30px;
     border-radius: 2px;
-    background: #99E2D0;
+    background: $tert-mid;
     font-size: .8rem;
-    color: #008766;
-    padding-top: 4px;
+    color: $tertiary;
+    padding-top: 3.5px;
     text-align: center;
     font-weight: 500;
     top: 14px;
@@ -384,36 +395,44 @@ nav, .restau {
 .card__content {
     padding: 14px;
     position: relative;
-}
 
-.card__content div {
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 20px;
+    & p {
+        font-weight: lighter;
+    }
+
+    & div {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 20px;
+    }
 }
 
 .icon-heart {
-    @include iconToggle("\f004", "\f004", lightgrey, pink, 400, 900);
-}
-
-.icon-heart:hover .toggle ~ .icon::before {
-    color: pink;
+    @include iconToggle("\f004", "\f004", $dark, $sec-mid, 400, 900);
+    
+    &:hover .toggle ~ .i-heart::before {
+        background: linear-gradient(to bottom, $primary, $secondary);
+        background: -webkit-linear-gradient(to bottom, $primary, $secondary);
+        background: -moz-linear-gradient(to bottom, $primary, $secondary);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+    }
 }
 
 .icon:before {
     font-family: 'Font Awesome 5 Free';
     font-style: normal;
-    font-size: 1.5rem;
+    font-size: 1.5rem; 
 }
 
 .toggle {
     opacity: 0;
     border: 0;
     outline: none;
-    height: 100%;
     width: 100%;
-    background: transparent;
+    height: 28px;
     position: absolute;
     cursor: pointer;
     z-index: 100;
@@ -435,8 +454,45 @@ nav, .restau {
     left: -100vw;
 }
 
-.card__content p {
-    font-weight: lighter;
+/* ---- menus ---- */
+.menu {
+    padding: 38px 20px;
+    background: $xtra-light;
+    border-radius: 38px 38px 0 0;
+    margin-top: -38px;
+
+    & h1 {
+        font-size: 1.7rem;
+    }
+    
+    & h2 {
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        font-weight: 300;
+    }
+
+    & .card {
+        padding: 15px 11px;
+    }
+
+    & .card__content {
+        padding: 0;
+        max-width: 312px;
+    }
+}
+
+.menu__title {
+    margin-bottom: 33px;
+    max-width: 320px;
+}
+
+.underline {
+    position: absolute;
+    content: '';
+    width: 50px;
+    height: 4px;
+    margin-top: 3px;
+    background: $tert-mid;
 }
 
 /* ---- footer ---- */
@@ -444,6 +500,16 @@ footer {
     background-color: $dark-grey;
     height: 197px;
     padding: 20px 25px;
+
+    & h2 {
+        font-size: 1.1rem;
+        letter-spacing: 0.034em;
+        font-weight: normal;
+    }
+    
+    & i {
+        font-size: 1rem;
+    }
 }
 
 footer a, footer i, footer h2, footer p {
@@ -461,22 +527,13 @@ footer a:hover i, footer a:hover h2, footer a:hover p {
 
 .footer__content {
     margin-top: 1rem;
+    
+    & a {
+        display: flex;
+        margin-top: 3px;
+    }
 }
 
-.footer__content a {
-    display: flex;
-    margin-top: 3px;
-}
-
-footer h2 {
-    font-size: 1.1rem;
-    letter-spacing: 0.034em;
-    font-weight: normal;
-}
-
-footer i {
-    font-size: 1rem;
-}
 
 .footer__content > a:nth-child(2) i {
     font-size: .8rem;

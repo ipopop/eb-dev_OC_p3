@@ -15,7 +15,7 @@
         width: 100%;
         z-index: -100;
         -webkit-border-radius: 28px;
-        // -moz-border-radius: 28px;
+        -moz-border-radius: 28px;
         border-radius: 28px;
         transition: opacity $transTime;
     }
@@ -24,4 +24,9 @@
             opacity: 1;
         }
     }
+}
+
+// usage
+btn {
+    @include gradientAnimation(pink, violet, .2s);
 }
