@@ -116,6 +116,10 @@ img {
     font-style: normal;
     margin-right: 1rem;
 }
+
+label {
+    display: none
+}
 /* ---- end basic HTML elements ---- */
 
 /* ---- center ---- */
@@ -500,10 +504,6 @@ nav, .restau {
 
         & span {
             margin-left: 1rem;
-        }
-    
-        & label {
-            display: none
         }
 
         & .menu-item-check {

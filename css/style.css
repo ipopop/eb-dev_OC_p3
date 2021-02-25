@@ -132,6 +132,10 @@ img {
   margin-right: 1rem;
 }
 
+label {
+  display: none;
+}
+
 /* ---- end basic HTML elements ---- */
 /* ---- center ---- */
 .h-center {
@@ -540,9 +544,6 @@ nav, .restau {
 }
 .menu .card span {
   margin-left: 1rem;
-}
-.menu .card label {
-  display: none;
 }
 .menu .card .menu-item-check {
   position: absolute;
