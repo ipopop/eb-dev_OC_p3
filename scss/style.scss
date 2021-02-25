@@ -501,6 +501,10 @@ nav, .restau {
         & span {
             margin-left: 1rem;
         }
+    
+        & label {
+            display: none
+        }
 
         & .menu-item-check {
             @include iconToggle("", "\f058", $lighter, $lighter, 900, 900);
