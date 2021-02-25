@@ -152,7 +152,7 @@ img {
 
 /* ---- page parts ---- */
 .main-block,
-h1, footer h2 {
+footer h2 {
     font-family: 'Shrikhand', serif;
 }
 
@@ -461,6 +461,7 @@ nav, .restau {
     margin-top: -38px;
 
     & h1 {
+        font-family: 'Shrikhand', serif;
         font-size: 1.7rem;
     }
 
