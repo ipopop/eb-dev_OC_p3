@@ -467,7 +467,7 @@ nav, .restau {
   color: transparent;
 }
 
-.icon:before {
+.icon::before {
   font-family: "Font Awesome 5 Free";
   font-style: normal;
   font-size: 1.5rem;
@@ -477,11 +477,10 @@ nav, .restau {
   opacity: 0;
   border: 0;
   outline: none;
-  width: 100%;
-  height: 28px;
+  width: 50px;
+  height: 50px;
   position: absolute;
   cursor: pointer;
-  z-index: 100;
 }
 
 .fa-heart {
@@ -501,7 +500,7 @@ nav, .restau {
 
 /* ---- menus ---- */
 .menu {
-  padding: 38px 20px;
+  padding: 38px 20px 18px;
   background: #f6f6f6;
   border-radius: 38px 38px 0 0;
   margin-top: -38px;
@@ -509,17 +508,63 @@ nav, .restau {
 .menu h1 {
   font-size: 1.7rem;
 }
+.menu article, .menu .btn {
+  margin-top: 47px;
+}
 .menu h2 {
   font-size: 1.2rem;
   text-transform: uppercase;
   font-weight: 300;
 }
 .menu .card {
-  padding: 15px 11px;
+  padding: 10px;
+  position: relative;
 }
-.menu .card__content {
+.menu .card p, .menu .card span {
+  font-size: 0.875rem;
+}
+.menu .card .card__content {
   padding: 0;
   max-width: 312px;
+}
+.menu .card:hover .card__content {
+  max-width: 246px;
+}
+.menu .card h3, .menu .card p {
+  white-space: nowrap;
+  /* Nécessaire pour text-overflow */
+  overflow: hidden;
+  /* Nécessaire pour text-overflow */
+  text-overflow: ellipsis;
+}
+.menu .card span {
+  margin-left: 1rem;
+}
+.menu .card .menu-item-check {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.menu .card .menu-item-check .toggle ~ .icon:before {
+  content: "";
+  color: #FFFFFF;
+  font-weight: 900;
+}
+.menu .card .menu-item-check .toggle:checked ~ .icon:before {
+  content: "";
+  color: #FFFFFF;
+  font-weight: 900;
+}
+.menu .card:hover .menu-item-check {
+  display: block;
+  background: #99E2D0;
+  margin-left: 1rem;
+  width: 60px;
+  height: 100%;
+  padding: 22px 20px;
+}
+.menu .card form i::before {
+  font-size: 1.25rem;
 }
 
 .menu__title {

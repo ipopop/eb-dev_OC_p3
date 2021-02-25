@@ -421,7 +421,7 @@ nav, .restau {
     }
 }
 
-.icon:before {
+.icon::before {
     font-family: 'Font Awesome 5 Free';
     font-style: normal;
     font-size: 1.5rem; 
@@ -431,11 +431,10 @@ nav, .restau {
     opacity: 0;
     border: 0;
     outline: none;
-    width: 100%;
-    height: 28px;
+    width: 50px;
+    height: 50px;
     position: absolute;
     cursor: pointer;
-    z-index: 100;
 }
 
 .fa-heart {
@@ -456,13 +455,17 @@ nav, .restau {
 
 /* ---- menus ---- */
 .menu {
-    padding: 38px 20px;
+    padding: 38px 20px 18px;
     background: $xtra-light;
     border-radius: 38px 38px 0 0;
     margin-top: -38px;
 
     & h1 {
         font-size: 1.7rem;
+    }
+
+    & article, .btn {
+        margin-top: 47px;
     }
     
     & h2 {
@@ -472,12 +475,51 @@ nav, .restau {
     }
 
     & .card {
-        padding: 15px 11px;
-    }
+        padding: 10px;
+        position: relative;
 
-    & .card__content {
-        padding: 0;
-        max-width: 312px;
+        & p, span {
+            font-size: 0.875rem;
+        }
+    
+        & .card__content {
+            padding: 0;
+            max-width: 312px;
+        }
+        
+        &:hover .card__content {
+            max-width: 246px;
+        }
+        
+        & h3, p {
+            white-space: nowrap; /* Nécessaire pour text-overflow */
+            overflow: hidden; /* Nécessaire pour text-overflow */
+            text-overflow: ellipsis;
+        }
+
+        & span {
+            margin-left: 1rem;
+        }
+
+        & .menu-item-check {
+            @include iconToggle("", "\f058", $lighter, $lighter, 900, 900);
+            position: absolute;
+            right: 0;
+            top: 0; 
+        }
+        
+        &:hover .menu-item-check {
+            display: block;
+            background: $tert-mid;
+            margin-left: 1rem;
+            width: 60px;
+            height: 100%;
+            padding: 22px 20px;
+        }
+        
+        & form i::before {
+            font-size: 1.25rem;
+        }
     }
 }
 
