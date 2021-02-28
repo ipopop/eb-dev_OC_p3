@@ -6,8 +6,10 @@
 $primary: #9356DC;
 $prim-mid: #c896ff;
 $prim-light: #F5EDFF;
+
 $secondary: #ff7ad9;
 $sec-mid: #ffc2ed;
+
 $tertiary: #008766;
 $tert-mid: #99E2D0;
 
@@ -32,9 +34,7 @@ $txt-shadow: 0px 1px 1px #00000030;
     box-sizing: border-box;
 }
 
-:focus {
-    outline: none;
-}
+:focus { outline: none; }
 
 html {
     line-height: 1.5rem;
@@ -74,26 +74,15 @@ main, footer {
 /* ---- end reset & common styles ---- */
 
 /* ---- basic HTML elements ---- */
-h1, h2, h3 {
-    font-weight: 700;
-}
+h1, h2, h3 { font-weight: 700; }
 
-h1, h2 {
-    font-size: 1.5rem;
+h1, h2 { font-size: 1.5rem; }
 
-}
+h3 { font-size: 1.125rem; }
 
-h3 {
-    font-size: 1.125rem;
-}
+a, .button, .card, :hover { transition: all .2s ease-in-out; }
 
-a, .button, .card, :hover {
-    transition: all .2s ease-in-out;
-}
-
-li {
-    list-style: none;
-}
+li { list-style: none; }
 
 img {
     display: block;
@@ -115,10 +104,6 @@ img {
 .fa, .fas {
     font-style: normal;
     margin-right: 1rem;
-}
-
-label {
-    display: none
 }
 /* ---- end basic HTML elements ---- */
 
@@ -156,9 +141,7 @@ label {
 
 /* ---- page parts ---- */
 .main-block,
-footer h2 {
-    font-family: 'Shrikhand', serif;
-}
+footer h2 { font-family: 'Shrikhand', serif; }
 
 /* ---- header ---- */
 header {
@@ -183,9 +166,7 @@ header {
         left: 45px;
     }
     
-    & img {
-        max-width: 165px;
-    }
+    & img { max-width: 165px; }
 }
 
 /* ---- map-search form ---- */
@@ -195,18 +176,14 @@ header {
     padding: 15px;
     background: $light;
     
-    & form {
-        max-width: 160px;
-    }
+    & form { max-width: 160px; }
     
     & input {
         background: transparent;
         outline: none;
         border: none;
         
-        &:hover {
-            background: $lighter;     
-        }
+        &:hover { background: $lighter; }
     }
 }
     
@@ -229,9 +206,7 @@ header {
 }
 
 /* ---- banner ---- */
-.banner, .restau {
-    background-color: $xtra-light;
-}
+.banner, .restau { background-color: $xtra-light; }
 
 .banner {
     height: 288px;
@@ -282,13 +257,9 @@ header {
 }
 
 /* ---- nav ---- */
-nav, .restau {
-    padding: 68px 20px ;
-}
+nav, .restau { padding: 68px 20px; }
 
-.nav, .restau {
-    flex-direction: column;
-}
+.nav, .restau { flex-direction: column; }
 
 .nav {
     & a {
@@ -330,13 +301,9 @@ nav, .restau {
         font-size: 1.4rem;
     }
     
-    & a:nth-last-child(-n+2) i {
-        font-size: 1rem;
-    }
+    & a:nth-last-child(-n+2) i { font-size: 1rem; }
     
-    & p {
-        font-weight: bold;
-    }
+    & p { font-weight: bold; }
 }
 
 /* ---- restaurants ---- */
@@ -345,9 +312,7 @@ nav, .restau {
     height: auto;
 }
 
-.cards {
-    flex-direction: column;
-}
+.cards { flex-direction: column; }
 
 .card {
     margin-top: 20px;
@@ -358,9 +323,7 @@ nav, .restau {
     border-radius: 1rem;
     overflow: hidden;
     
-    &:hover {
-        box-shadow: $shadow;
-    }
+    &:hover { box-shadow: $shadow; }
 }
 
 .card__img {
@@ -375,9 +338,7 @@ nav, .restau {
     }
 }
 
-.restau-3 img {
-    bottom: -53%;
-}
+.restau-3 img { bottom: -53%; }
 
 .card__new {
     content: '';
@@ -400,11 +361,9 @@ nav, .restau {
     padding: 14px;
     position: relative;
 
-    & p {
-        font-weight: lighter;
-    }
+    & p { font-weight: lighter; }
 
-    & div {
+    & form {
         position: absolute;
         top: 0;
         right: 0;
@@ -413,7 +372,7 @@ nav, .restau {
 }
 
 .icon-heart {
-    @include iconToggle("\f004", "\f004", $dark, $sec-mid, 400, 900);
+    @include iconToggle("\f004", "\f004", $sec-mid, $dark, 900, 400);
     
     &:hover .toggle ~ .i-heart::before {
         background: linear-gradient(to bottom, $primary, $secondary);
@@ -440,24 +399,7 @@ nav, .restau {
     position: absolute;
     cursor: pointer;
 }
-
-.fa-heart {
-    font-size: 2rem;
-    color: $mid-grey;
-
-    &:hover, :focus-visible {
-        color: $secondary;
-        background-color: linear-gradient($secondary, $primary);
-        font-weight:900;
-    }
-}
-
-.visually-hidden {
-    position: absolute;
-    left: -100vw;
-}
-
-/* ---- menus ---- */
+/* ---- menus pages ---- */
 .menu {
     padding: 38px 20px 18px;
     background: $xtra-light;
@@ -469,9 +411,7 @@ nav, .restau {
         font-size: 1.7rem;
     }
 
-    & article, .btn {
-        margin-top: 47px;
-    }
+    & article, .btn { margin-top: 47px; }
     
     & h2 {
         font-size: 1.2rem;
@@ -482,18 +422,18 @@ nav, .restau {
     & .card {
         padding: 10px;
         position: relative;
+        cursor: pointer;
 
-        & p, span {
-            font-size: 0.875rem;
-        }
+        & p, span { font-size: 0.875rem; }
     
         & .card__content {
             padding: 0;
             max-width: 312px;
         }
         
-        &:hover .card__content {
-            max-width: 246px;
+        &:hover .card__content,
+         :hover h3 {
+             max-width: 246px;
         }
         
         & h3, p {
@@ -502,29 +442,40 @@ nav, .restau {
             text-overflow: ellipsis;
         }
 
-        & span {
-            margin-left: 1rem;
-        }
+        & span { margin-left: 1rem; }
 
         & .menu-item-check {
-            @include iconToggle("", "\f058", $lighter, $lighter, 900, 900);
+            @include iconToggle("\f058", "", $lighter, $lighter, 900, 900);
             position: absolute;
             right: 0;
             top: 0; 
         }
         
         &:hover .menu-item-check {
-            display: block;
             background: $tert-mid;
             margin-left: 1rem;
             width: 60px;
             height: 100%;
             padding: 22px 20px;
+
+            & label:before {
+                font-family: 'Font Awesome 5 Free';
+                content: "";
+                color: $lighter;
+            }
+
+            /* --- toggle-switch-test --- */        
+            & .switch:checked + label:before {
+                font-family: 'Font Awesome 5 Free';
+                content: "\f058";
+                color: $lighter;
+                font-weight: 900;
+            }
         }
         
-        & form i::before {
-            font-size: 1.25rem;
-        }
+        & form i::before { font-size: 1.25rem; }
+
+        
     }
 }
 
@@ -554,18 +505,17 @@ footer {
         font-weight: normal;
     }
     
-    & i {
-        font-size: 1rem;
-    }
+    & i { font-size: 1rem; }
 }
 
-footer a, footer i, footer h2, footer p {
-    color: $xtra-light;
-}
+footer a,
+footer i,
+footer h2,
+footer p { color: $xtra-light; }
 
-footer a:hover i, footer a:hover h2, footer a:hover p {
-    color: $prim-mid;
-}
+footer a:hover i,
+footer a:hover h2,
+footer a:hover p { color: $prim-mid; }
 
 .footer__box {
     width: 100%;
@@ -585,4 +535,4 @@ footer a:hover i, footer a:hover h2, footer a:hover p {
 .footer__content > a:nth-child(2) i {
     font-size: .8rem;
     margin-right: 13px;
-    }
+}

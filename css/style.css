@@ -132,10 +132,6 @@ img {
   margin-right: 1rem;
 }
 
-label {
-  display: none;
-}
-
 /* ---- end basic HTML elements ---- */
 /* ---- center ---- */
 .h-center {
@@ -445,7 +441,7 @@ nav, .restau {
 .card__content p {
   font-weight: lighter;
 }
-.card__content div {
+.card__content form {
   position: absolute;
   top: 0;
   right: 0;
@@ -454,13 +450,13 @@ nav, .restau {
 
 .icon-heart .toggle ~ .icon:before {
   content: "";
-  color: #333;
-  font-weight: 400;
+  color: #ffc2ed;
+  font-weight: 900;
 }
 .icon-heart .toggle:checked ~ .icon:before {
   content: "";
-  color: #ffc2ed;
-  font-weight: 900;
+  color: #333;
+  font-weight: 400;
 }
 .icon-heart:hover .toggle ~ .i-heart::before {
   background: linear-gradient(to bottom, #9356DC, #ff7ad9);
@@ -487,22 +483,7 @@ nav, .restau {
   cursor: pointer;
 }
 
-.fa-heart {
-  font-size: 2rem;
-  color: #ababab;
-}
-.fa-heart:hover, .fa-heart :focus-visible {
-  color: #ff7ad9;
-  background-color: linear-gradient(#ff7ad9, #9356DC);
-  font-weight: 900;
-}
-
-.visually-hidden {
-  position: absolute;
-  left: -100vw;
-}
-
-/* ---- menus ---- */
+/* ---- menus pages ---- */
 .menu {
   padding: 38px 20px 18px;
   background: #f6f6f6;
@@ -524,6 +505,7 @@ nav, .restau {
 .menu .card {
   padding: 10px;
   position: relative;
+  cursor: pointer;
 }
 .menu .card p, .menu .card span {
   font-size: 0.875rem;
@@ -532,7 +514,8 @@ nav, .restau {
   padding: 0;
   max-width: 312px;
 }
-.menu .card:hover .card__content {
+.menu .card:hover .card__content,
+.menu .card :hover h3 {
   max-width: 246px;
 }
 .menu .card h3, .menu .card p {
@@ -551,22 +534,33 @@ nav, .restau {
   top: 0;
 }
 .menu .card .menu-item-check .toggle ~ .icon:before {
-  content: "";
-  color: #FFFFFF;
-  font-weight: 900;
-}
-.menu .card .menu-item-check .toggle:checked ~ .icon:before {
   content: "";
   color: #FFFFFF;
   font-weight: 900;
 }
+.menu .card .menu-item-check .toggle:checked ~ .icon:before {
+  content: "";
+  color: #FFFFFF;
+  font-weight: 900;
+}
 .menu .card:hover .menu-item-check {
-  display: block;
   background: #99E2D0;
   margin-left: 1rem;
   width: 60px;
   height: 100%;
   padding: 22px 20px;
+  /* --- toggle-switch-test --- */
+}
+.menu .card:hover .menu-item-check label:before {
+  font-family: "Font Awesome 5 Free";
+  content: "";
+  color: #FFFFFF;
+}
+.menu .card:hover .menu-item-check .switch:checked + label:before {
+  font-family: "Font Awesome 5 Free";
+  content: "";
+  color: #FFFFFF;
+  font-weight: 900;
 }
 .menu .card form i::before {
   font-size: 1.25rem;
@@ -601,11 +595,16 @@ footer i {
   font-size: 1rem;
 }
 
-footer a, footer i, footer h2, footer p {
+footer a,
+footer i,
+footer h2,
+footer p {
   color: #f6f6f6;
 }
 
-footer a:hover i, footer a:hover h2, footer a:hover p {
+footer a:hover i,
+footer a:hover h2,
+footer a:hover p {
   color: #c896ff;
 }
 
