@@ -449,7 +449,7 @@ nav, .restau { padding: 68px 20px; }
     
         & .card__txt {
             padding: 0;
-            width: 80%;
+            width: 100%;
             max-width: 312px;
             transition: transform 500ms;
 
@@ -472,8 +472,6 @@ nav, .restau { padding: 68px 20px; }
             margin-left: 1rem;
             display: flex;
             align-items: flex-end;
-            transform: translateX(0);
-            transition: transform 500ms;
         }
         
         & .card__check {

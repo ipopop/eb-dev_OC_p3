@@ -483,7 +483,7 @@ nav, .restau {
 }
 .menu .card .card__txt {
   padding: 0;
-  width: 80%;
+  width: 100%;
   max-width: 312px;
   transition: transform 500ms;
   /* Nécessaire pour text-overflow */
@@ -506,8 +506,6 @@ nav, .restau {
   margin-left: 1rem;
   display: flex;
   align-items: flex-end;
-  transform: translateX(0);
-  transition: transform 500ms;
 }
 .menu .card .card__check {
   display: flex;
