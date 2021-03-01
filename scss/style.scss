@@ -451,7 +451,7 @@ nav, .restau { padding: 68px 20px; }
             padding: 0;
             width: 100%;
             max-width: 312px;
-            transition: transform 350ms;
+            transition: all 350ms;
 
             & p, h3 { white-space: nowrap; } /* Nécessaire pour text-overflow */
         }

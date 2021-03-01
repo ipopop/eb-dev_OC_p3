@@ -485,7 +485,7 @@ nav, .restau {
   padding: 0;
   width: 100%;
   max-width: 312px;
-  transition: transform 350ms;
+  transition: all 350ms;
   /* Nécessaire pour text-overflow */
 }
 .menu .card .card__txt p, .menu .card .card__txt h3 {
