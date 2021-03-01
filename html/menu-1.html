@@ -16,16 +16,18 @@
     <meta property="og:site_name" content="ohmyfood! Paris" />
     <meta property="og:description" content="ohmyfood! Paris - commander son menu au restaurant dès la reservation" />
     <link rel="apple-touch-icon" sizes="180x180"
-        href="https://ipopop.github.io/eb-dev_OC_p3/assets/favicon/apple-touch-icon.png">
+        href="https://raw.githubusercontent.com/ipopop/eb-dev_OC_p3/main/assets/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32"
-        href="https://ipopop.github.io/eb-dev_OC_p3/assets/favicon/favicon-32x32.png">
+        href="https://raw.githubusercontent.com/ipopop/eb-dev_OC_p3/main/assets/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16"
         href="https://ipopop.github.io/eb-dev_OC_p3/assets/favicon/favicon-16x16.png">
     <link rel="manifest" href="https://ipopop.github.io/eb-dev_OC_p3/assets/favicon/site.webmanifest">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&family=Shrikhand&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
         integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
         crossorigin="anonymous" />
-    <link rel="preload" href="css/style.css" as="style">
     <link rel="preload" href="../css/style.css" as="style">
     <link rel="stylesheet" href="../css/style.css">
     <title>ohmyfood! Paris - commander son menu au restaurant dès la reservation</title>
@@ -47,10 +49,10 @@
 
             <div class="menu__title space-b">
                 <h1>La palette du goût</h1>
-                <form class="icon-toggle icon-heart">
-                    <input type="checkbox" id="toggle1" class="toggle switch" checked="checked">
-                    <i class="icon i-heart"></i>
-                </form>
+                <div class="icon-heart">
+                    <input id="toggle1" class="switch" type="checkbox" checked>
+                    <label for="toggle1"></label>
+                </div>
             </div>
 
             <article>
@@ -58,46 +60,41 @@
                 <span class="underline"></span>
 
                 <div class="cards">
-                    <div class="card">
-                        <a>
+
+                    <div class="card space-b">
+                        <div class="card__txt">
                             <h3>Fricassée d'escargot</h3>
-                            <div class="card__content space-b">
-                                <p>Au piment d'espelette</p>
-                                <span><strong>25€</strong></span>
-                            </div>
-                        </a>
-                        <form class="menu-item-check">
-                            <input type="checkbox" id="E-1" class="toggle switch" checked="checked">
-                            <label for="E-1" class="btn"></label>
-                        </form>
+                            <p>Au piment d'espelette</p>
+                        </div>
+                        <span><strong>25€</strong></span>
+                        <div class="card__check">
+                            <input id="E1" class="toggle" type="checkbox" checked>
+                            <label for="E1"></label>
+                        </div>
                     </div>
 
-                    <div class="card">
-                        <a>
+                    <div class="card space-b">
+                        <div class="card__txt">
                             <h3>Foie gras de canard mi-cuit</h3>
-                            <div class="card__content space-b">
-                                <p>Et ses copeaux de truffe noire</p>
-                                <span><strong>35€</strong></span>
-                            </div>
-                        </a>
-                        <form class="icon-toggle menu-item-check">
-                            <input type="checkbox" id="E-2" class="toggle switch" checked="checked">
-                            <label for="E-2" class="btn"></label>
-                        </form>
+                            <p>Et ses copeaux de truffe noire</p>
+                        </div>
+                        <span><strong>35€</strong></span>
+                        <div class="card__check">
+                            <input id="E2" class="toggle" type="checkbox" checked>
+                            <label for="E2"></label>
+                        </div>
                     </div>
 
-                    <div class="card">
-                        <a>
+                    <div class="card space-b">
+                        <div class="card__txt">
                             <h3>Oeuf au plat</h3>
-                            <div class="card__content space-b">
-                                <p>Assaisonné à la truffe sur lit de caviar</p>
-                                <span><strong>20€</strong></span>
-                            </div>
-                        </a>
-                        <form class="icon-toggle menu-item-check">
-                            <input type="checkbox" id="E-3" class="toggle switch" checked="checked">
-                            <label for="E-3" class="btn"></label>
-                        </form>
+                            <p>Assaisonné à la truffe sur lit de caviar</p>
+                        </div>
+                        <span><strong>20€</strong></span>
+                        <div class="card__check">
+                            <input id="E3" class="toggle" type="checkbox" checked>
+                            <label for="E3"></label>
+                        </div>
                     </div>
                 </div>
             </article>
@@ -106,59 +103,51 @@
                 <span class="underline"></span>
 
                 <div class="cards">
-                    <div class="card">
-                        <a>
+                    <div class="card space-b">
+                        <div class="card__txt">
                             <h3>Filet de boeuf aux herbes</h3>
-                            <div class="card__content space-b">
-                                <p>Accompagné de sa ribambelle de légumes</p>
-                                <span><strong>40€</strong></span>
-                            </div>
-                        </a>
-                        <form class="icon-toggle menu-item-check">
-                            <input type="checkbox" id="P-1" class="toggle switch" checked="checked">
-                            <label for="P-1" class="btn"></label>
-                        </form>
+                            <p>Accompagné de sa ribambelle de légumes</p>
+                        </div>
+                        <span><strong>40€</strong></span>
+                        <div class="card__check">
+                            <input id="P1" class="toggle" type="checkbox" checked>
+                            <label for="P1"></label>
+                        </div>
                     </div>
 
-                    <div class="card">
-                        <a>
+                    <div class="card space-b">
+                        <div class="card__txt">
                             <h3>Parmentier de queue de boeuf</h3>
-                            <div class="card__content space-b">
-                                <p>À la truffe noire sur sa purée de panais</p>
-                                <span><strong>35€</strong></span>
-                            </div>
-                        </a>
-                        <form class="icon-toggle menu-item-check">
-                            <input type="checkbox" id="P-2" class="toggle switch" checked="checked">
-                            <label for="P-2" class="btn"></label>
-                        </form>
+                            <p>À la truffe noire sur sa purée de panais</p>
+                        </div>
+                        <span><strong>35€</strong></span>
+                        <div class="card__check">
+                            <input id="P2" class="toggle" type="checkbox" checked>
+                            <label for="P2"></label>
+                        </div>
                     </div>
 
-                    <div class="card">
-                        <a>
+                    <div class="card space-b">
+                        <div class="card__txt">
                             <h3>Oeuf au plat</h3>
-                            <div class="card__content space-b">
-                                <p>Assaisonné à la truffe sur lit de caviar</p>
-                                <span><strong>20€</strong></span>
-                            </div>
-                        </a>
-                        <form class="icon-toggle menu-item-check">
-                            <input type="checkbox" id="P-3" class="toggle switch" checked="checked">
-                            <label for="P-3" class="btn"></label>
-                        </form>
+                            <p>Assaisonné à la truffe sur lit de caviar</p>
+                        </div>
+                        <span><strong>20€</strong></span>
+                        <div class="card__check">
+                            <input id="P3" class="toggle" type="checkbox" checked>
+                            <label for="P3"></label>
+                        </div>
                     </div>
-                    <div class="card">
-                        <a>
+                    <div class="card space-b">
+                        <div class="card__txt">
                             <h3>Filet de turbot</h3>
-                            <div class="card__content space-b">
-                                <p>Aux agrumes</p>
-                                <span><strong>44€</strong></span>
-                            </div>
-                        </a>
-                        <form class="icon-toggle menu-item-check">
-                            <input type="checkbox" id="P-4" class="toggle switch" checked="checked">
-                            <label for="P-4" class="btn"></label>
-                        </form>
+                            <p>Aux agrumes</p>
+                        </div>
+                        <span><strong>44€</strong></span>
+                        <div class="card__check">
+                            <input id="P4" class="toggle" type="checkbox" checked>
+                            <label for="P4"></label>
+                        </div>
                     </div>
                 </div>
             </article>
@@ -167,46 +156,40 @@
                 <span class="underline"></span>
 
                 <div class="cards">
-                    <div class="card">
-                        <a>
+                    <div class="card space-b">
+                        <div class="card__txt">
                             <h3>Paris-Brest</h3>
-                            <div class="card__content space-b">
-                                <p>Revisité</p>
-                                <span><strong>18€</strong></span>
-                            </div>
-                        </a>
-                        <form class="icon-toggle menu-item-check">
-                            <input type="checkbox" id="D-1" class="toggle switch" checked="checked">
-                            <label for="D-1" class="btn"></label>
-                        </form>
+                            <p>Revisité</p>
+                        </div>
+                        <span><strong>18€</strong></span>
+                        <div class="card__check">
+                            <input id="D1" class="toggle" type="checkbox" checked>
+                            <label for="D1"></label>
+                        </div>
                     </div>
 
-                    <div class="card">
-                        <a>
+                    <div class="card space-b">
+                        <div class="card__txt">
                             <h3>Macaron au chocolat d'exception</h3>
-                            <div class="card__content space-b">
-                                <p>Et glace à la vanille de Madagascar</p>
-                                <span><strong>22€</strong></span>
-                            </div>
-                        </a>
-                        <form class="icon-toggle menu-item-check">
-                            <input type="checkbox" id="D-2" class="toggle switch" checked="checked">
-                            <label for="D-2" class="btn"></label>
-                        </form>
+                            <p>Et glace à la vanille de Madagascar</p>
+                        </div>
+                        <span><strong>22€</strong></span>
+                        <div class="card__check">
+                            <input id="D2" class="toggle" type="checkbox" checked>
+                            <label for="D2"></label>
+                        </div>
                     </div>
 
-                    <div class="card">
-                        <a>
+                    <div class="card space-b">
+                        <div class="card__txt">
                             <h3>Mousse au chocolat</h3>
-                            <div class="card__content space-b">
-                                <p>Au piment d'Espelette et à la truffe noire</p>
-                                <span><strong>23€</strong></span>
-                            </div>
-                        </a>
-                        <form class="icon-toggle menu-item-check">
-                            <input type="checkbox" id="D-3" class="toggle switch" checked="checked">
-                            <label for="D-3" class="btn"></label>
-                        </form>
+                            <p>Au piment d'Espelette et à la truffe noire</p>
+                        </div>
+                        <span><strong>23€</strong></span>
+                        <div class="card__check">
+                            <input id="D3" class="toggle" type="checkbox" checked>
+                            <label for="D3"></label>
+                        </div>
                     </div>
                 </div>
             </article>
@@ -220,20 +203,20 @@
 
     <footer class="center">
         <div class="footer__box">
-            <a>
+            <a href="#top">
                 <h2>ohmyfood</h2>
             </a>
             <div class="footer__content">
-                <a>
+                <a href="#top">
                     <i class="fa fa-utensils"></i>
                     <p>Proposer un restaurant</p>
 
                 </a>
-                <a>
+                <a href="#top">
                     <i class="fa fa-hands-helping"></i>
                     <p>Devenir partenaire</p>
                 </a>
-                <a>
+                <a href="#top">
                     <p>Mentions légales</p>
                 </a>
                 <a href="mailto:contact@ohmyfood-corp.com">

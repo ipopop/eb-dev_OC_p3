@@ -1,23 +1,20 @@
-@mixin gradientAnimation( $start, $end, $transTime ){
+@mixin gradientColorSmoothAnim( $start, $end){
     box-sizing: border-box;
     background-size: 100%;
-    background-image: linear-gradient($start, $end);
+    background: linear-gradient(to bottom, $start, $end);
     position: relative;
     z-index: 100;
     &:before {
-        background-image: linear-gradient($end, $start);
+        background: linear-gradient(to bottom, $end, $start);
         content: "";
         display: block;
         height: 100%;
         position: absolute;
         top: 0; left: 0;
-        opacity: 0;
         width: 100%;
         z-index: -100;
-        -webkit-border-radius: 28px;
-        -moz-border-radius: 28px;
         border-radius: 28px;
-        transition: opacity $transTime;
+        opacity: 0;
     }
     &:hover {
         &:before {
@@ -26,7 +23,7 @@
     }
 }
 
-// usage
+// usage example
 btn {
-    @include gradientAnimation(pink, violet, .2s);
+    @include gradientColorSmoothAnim(pink, violet);
 }

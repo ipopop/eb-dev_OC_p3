@@ -1,7 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&family=Shrikhand&display=swap');
-
-@import "mixins/gradient-animation.scss"; /* smooth gradient transition */
-@import "mixins/toggle.scss";
+@import "mixins/gradient-animation.scss";
 
 $primary: #9356DC;
 $prim-mid: #c896ff;
@@ -80,7 +77,7 @@ h1, h2 { font-size: 1.5rem; }
 
 h3 { font-size: 1.125rem; }
 
-a, .button, .card, :hover { transition: all .2s ease-in-out; }
+a, form, .button, .card, :hover, ::before, ::after { transition: all 250ms ease-in-out; }
 
 li { list-style: none; }
 
@@ -233,7 +230,7 @@ header {
 
 .banner__btn {
     box-shadow: $shadow;
-    @include gradientAnimation($secondary, $primary, .2s);
+    @include gradientColorSmoothAnim($secondary, $primary); // ($start, $end)
     -webkit-border-radius: 28px;
     border-radius: 28px;
     border: solid 1px $light;
@@ -249,7 +246,6 @@ header {
     }
 
     &:hover {
-        @include gradientAnimation($secondary, $primary, .2s);
         border-color: $lighter;
         box-shadow: $hover-shadow;
         text-shadow: $txt-shadow;
@@ -360,6 +356,7 @@ nav, .restau { padding: 68px 20px; }
 .card__content {
     padding: 14px;
     position: relative;
+    max-width: 96%;
 
     & p { font-weight: lighter; }
 
@@ -371,25 +368,6 @@ nav, .restau { padding: 68px 20px; }
     }
 }
 
-.icon-heart {
-    @include iconToggle("\f004", "\f004", $sec-mid, $dark, 900, 400);
-    
-    &:hover .toggle ~ .i-heart::before {
-        background: linear-gradient(to bottom, $primary, $secondary);
-        background: -webkit-linear-gradient(to bottom, $primary, $secondary);
-        background: -moz-linear-gradient(to bottom, $primary, $secondary);
-        background-clip: text;
-        -webkit-background-clip: text;
-        color: transparent;
-    }
-}
-
-.icon::before {
-    font-family: 'Font Awesome 5 Free';
-    font-style: normal;
-    font-size: 1.5rem; 
-}
-
 .toggle {
     opacity: 0;
     border: 0;
@@ -399,6 +377,47 @@ nav, .restau { padding: 68px 20px; }
     position: absolute;
     cursor: pointer;
 }
+
+.icon-heart {
+    & input { display: none; }
+    
+    & label::before {
+        font-family: 'Font Awesome 5 Free';
+        font-size: 1.5rem;
+        font-weight: 900;
+        color: $sec-mid;
+        content: "\f004";
+    }
+    
+    &:hover label::before {
+        content: "\f004";
+        font-weight: 900;
+        background: linear-gradient(to bottom, $primary, $secondary);
+        background: -webkit-linear-gradient(to bottom, $primary, $secondary);
+        background: -moz-linear-gradient(to bottom, $primary, $secondary);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+    }
+    
+    & input:checked + label::before {
+        content: "\f004";
+        color: $dark;
+        font-weight: 400;
+    }
+    
+    &:hover input:checked + label::before {
+        content: "\f004";
+        font-weight: 900;
+        background: linear-gradient(to bottom, $primary, $secondary);
+        background: -webkit-linear-gradient(to bottom, $primary, $secondary);
+        background: -moz-linear-gradient(to bottom, $primary, $secondary);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+    }  
+}
+
 /* ---- menus pages ---- */
 .menu {
     padding: 38px 20px 18px;
@@ -411,7 +430,8 @@ nav, .restau { padding: 68px 20px; }
         font-size: 1.7rem;
     }
 
-    & article, .btn { margin-top: 47px; }
+    & article,
+      .btn { margin-top: 47px; }
     
     & h2 {
         font-size: 1.2rem;
@@ -420,62 +440,78 @@ nav, .restau { padding: 68px 20px; }
     }
 
     & .card {
+        display: flex;
         padding: 10px;
-        position: relative;
         cursor: pointer;
+        position: relative;
 
         & p, span { font-size: 0.875rem; }
     
-        & .card__content {
+        & .card__txt {
             padding: 0;
+            width: 80%;
             max-width: 312px;
+            transition: transform 500ms;
+
+            & p, h3 { white-space: nowrap; } /* Nécessaire pour text-overflow */
         }
-        
-        &:hover .card__content,
-         :hover h3 {
-             max-width: 246px;
-        }
-        
-        & h3, p {
-            white-space: nowrap; /* Nécessaire pour text-overflow */
+
+        &:hover .card__txt h3,
+         .card__txt p {
             overflow: hidden; /* Nécessaire pour text-overflow */
             text-overflow: ellipsis;
         }
 
-        & span { margin-left: 1rem; }
+        &:hover .card__txt {
+            width: 67%;
+            max-width: 246px;
+        }
 
-        & .menu-item-check {
-            @include iconToggle("\f058", "", $lighter, $lighter, 900, 900);
-            position: absolute;
-            right: 0;
-            top: 0; 
+        & span {
+            width: 10%;
+            margin-left: 1rem;
+            display: flex;
+            align-items: flex-end;
+            transform: translateX(0);
+            transition: transform 500ms;
         }
         
-        &:hover .menu-item-check {
+        & .card__check {
+            display: flex;
+            width: 20%;
+            position: absolute;
+            right: 0;
+            top: 0;
+            transform: translate(100%);
+
+            & input { display: none; }
+        }
+
+        & .card__check label::before {
+            font-family: 'Font Awesome 5 Free';
+            content: "\f058";
+            font-size: 1.25rem;
+            font-weight: 400;
+            color: $lighter;
+        }
+        
+        &:hover .card__check {
             background: $tert-mid;
             margin-left: 1rem;
             width: 60px;
             height: 100%;
             padding: 22px 20px;
+            transform: translate(0);
 
-            & label:before {
+            /* --- toggle icon --- */        
+            & .toggle:checked + label:before {
+                content: "\f057";
                 font-family: 'Font Awesome 5 Free';
-                content: "";
-                color: $lighter;
-            }
-
-            /* --- toggle-switch-test --- */        
-            & .switch:checked + label:before {
-                font-family: 'Font Awesome 5 Free';
-                content: "\f058";
-                color: $lighter;
+                font-size: 1.25rem;
                 font-weight: 900;
+                color: $lighter;
             }
         }
-        
-        & form i::before { font-size: 1.25rem; }
-
-        
     }
 }
 
@@ -530,7 +566,6 @@ footer a:hover p { color: $prim-mid; }
         margin-top: 3px;
     }
 }
-
 
 .footer__content > a:nth-child(2) i {
     font-size: .8rem;
