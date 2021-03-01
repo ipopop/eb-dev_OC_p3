@@ -485,7 +485,7 @@ nav, .restau {
   padding: 0;
   width: 100%;
   max-width: 312px;
-  transition: transform 500ms;
+  transition: transform 350ms;
   /* Nécessaire pour text-overflow */
 }
 .menu .card .card__txt p, .menu .card .card__txt h3 {
@@ -509,18 +509,20 @@ nav, .restau {
 }
 .menu .card .card__check {
   display: flex;
-  width: 20%;
   position: absolute;
-  right: 0;
-  top: 0;
-  transform: translate(100%);
+  transform: translate(300px, -10px);
+  transition: transform 300ms ease-in-out;
 }
 .menu .card .card__check input {
   display: none;
 }
+.menu .card .card__check label {
+  transform: rotate(0turn);
+  transition: transform 350ms ease-in-out;
+}
 .menu .card .card__check label::before {
   font-family: "Font Awesome 5 Free";
-  content: "";
+  content: "";
   font-size: 1.25rem;
   font-weight: 400;
   color: #FFFFFF;
@@ -531,11 +533,14 @@ nav, .restau {
   width: 60px;
   height: 100%;
   padding: 22px 20px;
-  transform: translate(0);
+  transform: translate(250px, -10px);
   /* --- toggle icon --- */
 }
+.menu .card:hover .card__check label {
+  transform: rotate(2turn);
+}
 .menu .card:hover .card__check .toggle:checked + label:before {
-  content: "";
+  content: "";
   font-family: "Font Awesome 5 Free";
   font-size: 1.25rem;
   font-weight: 900;

@@ -451,7 +451,7 @@ nav, .restau { padding: 68px 20px; }
             padding: 0;
             width: 100%;
             max-width: 312px;
-            transition: transform 500ms;
+            transition: transform 350ms;
 
             & p, h3 { white-space: nowrap; } /* Nécessaire pour text-overflow */
         }
@@ -476,21 +476,24 @@ nav, .restau { padding: 68px 20px; }
         
         & .card__check {
             display: flex;
-            width: 20%;
             position: absolute;
-            right: 0;
-            top: 0;
-            transform: translate(100%);
-
+            transform: translate(300px, -10px);
+            transition: transform 300ms ease-in-out;
+            
             & input { display: none; }
         }
+        
+        & .card__check label {
+            transform: rotate(0turn);
+            transition: transform 350ms ease-in-out;
 
-        & .card__check label::before {
+            &::before {
             font-family: 'Font Awesome 5 Free';
-            content: "\f058";
+            content: "\f057";
             font-size: 1.25rem;
             font-weight: 400;
             color: $lighter;
+            }
         }
         
         &:hover .card__check {
@@ -499,11 +502,15 @@ nav, .restau { padding: 68px 20px; }
             width: 60px;
             height: 100%;
             padding: 22px 20px;
-            transform: translate(0);
+            transform: translate(250px, -10px);
+
+            & label {
+                transform: rotate(2turn);
+            }
 
             /* --- toggle icon --- */        
             & .toggle:checked + label:before {
-                content: "\f057";
+                content: "\f058";
                 font-family: 'Font Awesome 5 Free';
                 font-size: 1.25rem;
                 font-weight: 900;
