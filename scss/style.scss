@@ -591,21 +591,26 @@ footer a:hover p { color: $prim-mid; }
     }
 }
 
-.menu {
+.menu .cards {
+
+    & .card:nth-child(1) {
+        animation: menu-items-launch 700ms 300ms;
+        animation-fill-mode: both;
+    }
 
     & .card:nth-child(2) {
         animation: menu-items-launch 700ms 500ms;
-        // animation-fill-mode: backwards;
+        animation-fill-mode: both;
     }
 
     & .card:nth-child(3) {
         animation: menu-items-launch 700ms 800ms;
-        // animation-fill-mode: backwards;
+        animation-fill-mode: both;
     }
     
     & .card:nth-child(4) {
         animation: menu-items-launch 700ms 1100ms;
-        // animation-fill-mode: backwards;
+        animation-fill-mode: both;
     }
 }
 
