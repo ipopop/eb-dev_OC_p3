@@ -1,0 +1,24 @@
+/* ---- media queries ---- */
+@media (min-width: 376px) and (max-width: 500px) {
+    .menu__banner { 
+        height: 100vh;
+        width: 100vw;
+        max-height: 275px;
+        overflow: hidden;
+        z-index: -10;
+        position: relative;
+        top: 0;
+    }
+
+    .menu__banner img {
+        height: 200%;
+        max-height: 550px;
+        position: absolute;
+        bottom: -50%;
+    }
+
+    .menu {
+        // margin-top: 175px;
+        margin-bottom: -50px;
+    }
+}

@@ -1,0 +1,38 @@
+/* ---- map-search form ---- */
+.map-search {
+  width: 100%;
+  align-items: flex-start;
+  padding: 15px;
+  background: #eaeaea;
+}
+.map-search form {
+  max-width: 160px;
+}
+.map-search input {
+  background: transparent;
+  outline: none;
+  border: none;
+}
+.map-search input:hover {
+  background: #FFFFFF;
+}
+
+::placeholder {
+  font-style: italic;
+  opacity: 0.4;
+  text-overflow: ellipsis;
+  background: #eaeaea;
+}
+
+#search__input:focus-visible::placeholder {
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.2s ease-in-out;
+}
+
+#search__input:focus-visible {
+  outline: none;
+  background: white;
+}
+
+/*# sourceMappingURL=map-search-form.css.map */

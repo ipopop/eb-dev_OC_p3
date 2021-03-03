@@ -1,0 +1,51 @@
+@import "../utils/variables/colors.scss";
+
+/* ---- banner ---- */
+.banner, .restau { background-color: $xtra-light; }
+
+.banner {
+    height: 288px;
+    padding: 20px;
+    width: 100%;
+
+    & h1 {
+        font-size: 23px;
+        max-width: 250px;
+        margin: 20px;
+    }
+}
+
+.banner, .banner__content {
+    flex-direction: column;
+    text-align: center;
+    margin: auto;
+}
+
+.banner__content p {
+    font-weight: 300;
+    max-width: 300px;
+}
+
+.banner__btn {
+    box-shadow: $shadow;
+    @include gradientColorSmoothAnim($secondary, $primary); // ($start, $end)
+    -webkit-border-radius: 28px;
+    border-radius: 28px;
+    border: solid 1px $light;
+    margin: 20px auto 40px;
+    max-width: 222px;
+    
+    & a {
+        display: inline-block;
+        color: $xtra-light;
+        padding: 18px 22px;
+        -webkit-border-radius: 28px;
+        border-radius: 28px;
+    }
+
+    &:hover {
+        border-color: $lighter;
+        box-shadow: $hover-shadow;
+        text-shadow: $txt-shadow;
+    }
+}

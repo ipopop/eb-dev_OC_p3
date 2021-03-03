@@ -1,28 +1,4 @@
 @charset "UTF-8";
-btn {
-  box-sizing: border-box;
-  background-size: 100%;
-  background: linear-gradient(to bottom, pink, violet);
-  position: relative;
-  z-index: 100;
-}
-btn:before {
-  background: linear-gradient(to bottom, violet, pink);
-  content: "";
-  display: block;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: -100;
-  border-radius: 28px;
-  opacity: 0;
-}
-btn:hover:before {
-  opacity: 1;
-}
-
 /* ---- reset & common styles ---- */
 *,
 ::before,
@@ -148,10 +124,28 @@ img {
 }
 
 /* ---- end placeholder img & icons width & height ---- */
-/* ---- page parts ---- */
-.main-block,
-footer h2 {
-  font-family: "Shrikhand", serif;
+btn {
+  box-sizing: border-box;
+  background-size: 100%;
+  background: linear-gradient(to bottom, pink, violet);
+  position: relative;
+  z-index: 100;
+}
+btn:before {
+  background: linear-gradient(to bottom, violet, pink);
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: -100;
+  border-radius: 28px;
+  opacity: 0;
+}
+btn:hover:before {
+  opacity: 1;
 }
 
 /* ---- header ---- */
@@ -285,7 +279,7 @@ header img {
   text-shadow: 0px 1px 1px #00000030;
 }
 
-/* ---- nav ---- */
+/* ---- cards nav ---- */
 nav, .restau {
   padding: 68px 20px;
 }
@@ -452,7 +446,6 @@ nav, .restau {
   color: transparent;
 }
 
-/* ---- menus pages ---- */
 .menu {
   padding: 38px 20px 18px;
   background: #f6f6f6;
@@ -568,6 +561,7 @@ footer {
   padding: 20px 25px;
 }
 footer h2 {
+  font-family: "Shrikhand", serif;
   font-size: 1.1rem;
   letter-spacing: 0.034em;
   font-weight: normal;
@@ -622,14 +616,17 @@ footer a:hover p {
   animation: menu-items-launch 700ms 300ms;
   animation-fill-mode: both;
 }
+
 .menu .cards .card:nth-child(2) {
   animation: menu-items-launch 700ms 500ms;
   animation-fill-mode: both;
 }
+
 .menu .cards .card:nth-child(3) {
   animation: menu-items-launch 700ms 800ms;
   animation-fill-mode: both;
 }
+
 .menu .cards .card:nth-child(4) {
   animation: menu-items-launch 700ms 1100ms;
   animation-fill-mode: both;
@@ -655,6 +652,14 @@ footer a:hover p {
   animation: loader-anim 1.5s;
 }
 
+@keyframes lds-spinner {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 .lds-spinner {
   color: #9356DC;
   display: inline-block;
@@ -741,12 +746,27 @@ footer a:hover p {
   animation-delay: 0s;
 }
 
-@keyframes lds-spinner {
-  0% {
-    opacity: 1;
+/* ---- media queries ---- */
+@media (min-width: 376px) and (max-width: 500px) {
+  .menu__banner {
+    height: 100vh;
+    width: 100vw;
+    max-height: 275px;
+    overflow: hidden;
+    z-index: -10;
+    position: relative;
+    top: 0;
   }
-  100% {
-    opacity: 0;
+
+  .menu__banner img {
+    height: 200%;
+    max-height: 550px;
+    position: absolute;
+    bottom: -50%;
+  }
+
+  .menu {
+    margin-bottom: -50px;
   }
 }
 

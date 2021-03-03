@@ -1,0 +1,37 @@
+@import "../utils/variables/colors.scss";
+
+/* ---- map-search form ---- */
+.map-search {
+    width: 100%;
+    align-items: flex-start;
+    padding: 15px;
+    background: $light;
+    
+    & form { max-width: 160px; }
+    
+    & input {
+        background: transparent;
+        outline: none;
+        border: none;
+        
+        &:hover { background: $lighter; }
+    }
+}
+    
+::placeholder {
+    font-style: italic;
+    opacity: .4;
+    text-overflow: ellipsis;
+    background: $light;
+}
+
+#search__input:focus-visible::placeholder {
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.2s ease-in-out;
+}
+
+#search__input:focus-visible {
+    outline: none;
+    background: white;
+}
