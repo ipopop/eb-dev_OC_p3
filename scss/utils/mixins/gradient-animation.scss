@@ -1,21 +1,24 @@
-@mixin gradientColorSmoothAnim( $start, $end){
+@mixin gradientColorSmoothAnim($start, $end) {
     box-sizing: border-box;
     background-size: 100%;
-    background: linear-gradient(to bottom, $start, $end);
+    background: linear-gradient(.97turn, $start, $end);
     position: relative;
     z-index: 100;
+
     &:before {
-        background: linear-gradient(to bottom, $end, $start);
+        background: linear-gradient(.97turn, $end, $start);
         content: "";
         display: block;
         height: 100%;
         position: absolute;
-        top: 0; left: 0;
+        top: 0;
+        left: 0;
         width: 100%;
         z-index: -100;
         border-radius: 28px;
         opacity: 0;
     }
+
     &:hover {
         &:before {
             opacity: 1;

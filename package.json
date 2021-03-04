@@ -1,0 +1,28 @@
+{
+  "name": "ohmyfood",
+  "version": "1.0.0",
+  "description": "ohmyfood! Paris - commander son menu au restaurant dès la reservation",
+  "main": "index.html",
+  "scripts": {
+    "sass": "sass ./scss/style.scss:./css/style.css --watch --style compressed",
+    "prefix": "postcss ./css/style.css --use autoprefixer -d ./css/prefixed/",
+    "css:scss": "sass ./scss/style.scss:./css/style.css --style compressed",
+    "css:autoprefixer": "postcss ./css/style.css -u autoprefixer -d ./css/prefixed/",
+    "build:css": "npm run css:scss && npm run css:autoprefixer",
+    "watch:css": "onchange \"scss\" -- npm run build:css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ipopop/eb-dev_OC_p3.git"
+  },
+  "author": "eb-dev",
+  "license": "ISC",
+  "browserslist": "last 4 versions",
+  "homepage": "https://github.com/ipopop/eb-dev_OC_p3#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "autoprefixer": "^10.2.4",
+    "onchange": "^7.1.0",
+    "postcss": "^8.2.7"
+  }
+}

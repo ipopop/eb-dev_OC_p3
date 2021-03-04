@@ -1,0 +1,67 @@
+# when dev on css, to run sass (watch only) :
+npm run sass
+
+# after sass & before save with git, prefix only (no watch) :
+npm run prefix
+
+
+# auto watch for sass & prefixer (watch) :
+npm run watch:css
+
+
+# scss tree (main sass file = 'scss/style.scss'):
+
+scss
+├── base
+│   └── basics.scss
+├── layouts
+│   ├── _footer.scss
+│   ├── _header.scss
+│   └── _menus.scss
+├── pages
+│   ├── home-banner.scss
+│   ├── home-cards-nav.scss
+│   └── map-search-form.scss
+├── partials
+│   ├── _cards-anim.scss
+│   ├── _icon-heart.scss
+│   ├── _medias-queries.scss
+│   └── _spinner.scss
+├── style.scss
+└── utils
+    ├── mixins
+    │   └── gradient-animation.scss
+    └── variables
+        └── colors.scss
+
+
+# 'scripts' detail from 'package.json' :
+
+  "scripts": {
+    "sass": "sass ./scss/style.scss:./css/style.css --watch --style compressed",
+    "prefix": "postcss ./css/style.css --use autoprefixer -d ./css/prefixed/",
+
+    "css:scss": "sass ./scss/style.scss:./css/style.css --style compressed",
+    "css:autoprefixer": "postcss ./css/style.css -u autoprefixer -d ./css/prefixed/",
+    "build:css": "npm run css:scss && npm run css:autoprefixer",
+    "watch:css": "onchange \"scss\" -- npm run build:css"
+  },
+
+  and (for autoprefixer) :
+
+  "browserslist": "last 4 versions",
+
+
+# css tree :
+
+css
+├── prefixed
+│   └── style.css
+├── style.css
+└── style.css.map
+
+
+# html link to css :
+
+<link rel="preload" href="css/prefixed/style.css" as="style">
+<link rel="stylesheet" href="css/prefixed/style.css">
