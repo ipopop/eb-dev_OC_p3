@@ -109,7 +109,6 @@ img {
   place-items: center;
 }
 
-/* ---- end center ---- */
 /* ---- space-between ---- */
 .space-b {
   display: flex;
@@ -117,13 +116,14 @@ img {
   justify-content: space-between;
 }
 
-/* ---- placeholder img & icons width & height ---- */
-.img {
-  width: 95px;
-  height: 45px;
+/* ---- checkbox toggle ---- */
+.toggle input {
+  display: none;
+}
+.toggle > * {
+  cursor: pointer;
 }
 
-/* ---- end placeholder img & icons width & height ---- */
 btn {
   box-sizing: border-box;
   background-size: 100%;
@@ -400,52 +400,6 @@ nav, .restau {
   padding: 20px;
 }
 
-.toggle {
-  opacity: 0;
-  border: 0;
-  outline: none;
-  width: 50px;
-  height: 50px;
-  position: absolute;
-  cursor: pointer;
-}
-
-.icon-heart input {
-  display: none;
-}
-.icon-heart label::before {
-  font-family: "Font Awesome 5 Free";
-  font-size: 1.5rem;
-  font-weight: 900;
-  color: #ffc2ed;
-  content: "";
-}
-.icon-heart:hover label::before {
-  content: "";
-  font-weight: 900;
-  background: linear-gradient(to bottom, #9356DC, #ff7ad9);
-  background: -webkit-linear-gradient(to bottom, #9356DC, #ff7ad9);
-  background: -moz-linear-gradient(to bottom, #9356DC, #ff7ad9);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-}
-.icon-heart input:checked + label::before {
-  content: "";
-  color: #333;
-  font-weight: 400;
-}
-.icon-heart:hover input:checked + label::before {
-  content: "";
-  font-weight: 900;
-  background: linear-gradient(to bottom, #9356DC, #ff7ad9);
-  background: -webkit-linear-gradient(to bottom, #9356DC, #ff7ad9);
-  background: -moz-linear-gradient(to bottom, #9356DC, #ff7ad9);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-}
-
 .menu {
   padding: 38px 20px 18px;
   background: #f6f6f6;
@@ -601,6 +555,59 @@ footer a:hover p {
   margin-right: 13px;
 }
 
+.icon-heart label::before,
+.icon-heart input:checked + label::before {
+  font-family: "Font Awesome 5 Free";
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: transparent;
+  content: "";
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #333;
+  text-stroke-width: 1px;
+  text-stroke-color: #333;
+  background-size: 100% 200%;
+  background-image: -webkit-linear-gradient(top, transparent 50%, #9356DC 50%, #ff7ad9 80%);
+  /* For Chrome 25 and Safari 6, iOS 6.1, Android 4.3 */
+  background-image: -moz-linear-gradient(top, transparent 50%, #9356DC 50%, #ff7ad9 80%);
+  /* For Firefox (3.6 to 15) */
+  background-image: -o-linear-gradient(top, transparent 50%, #9356DC 50%, #ff7ad9 80%);
+  /* For old Opera (11.1 to 12.0) */
+  background-image: linear-gradient(to bottom, transparent 50%, #9356DC 50%, #ff7ad9 80%);
+  animation-fill-mode: forwards;
+}
+
+.icon-heart label::before {
+  background: #ffc2ed;
+  /* fallback color if gradients are not supported */
+  background: -webkit-linear-gradient(top, #ffc2ed 0%, #9356DC 23%, #ff7ad9 55%, #ffc2ed 90%);
+  /* For Chrome 25 and Safari 6, iOS 6.1, Android 4.3 */
+  background: -moz-linear-gradient(top, #ffc2ed 0%, #9356DC 23%, #ff7ad9 55%, #ffc2ed 90%);
+  /* For Firefox (3.6 to 15) */
+  background: -o-linear-gradient(top, #ffc2ed 0%, #9356DC 23%, #ff7ad9 55%, #ffc2ed 90%);
+  /* For old Opera (11.1 to 12.0) */
+  background: linear-gradient(to bottom, #ffc2ed 0%, #9356DC 23%, #ff7ad9 55%, #ffc2ed 90%);
+  opacity: 0.9;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.icon-heart input:checked + label::before {
+  color: transparent;
+  opacity: 1;
+}
+
+.icon-heart:hover label::before,
+.icon-heart:hover input:checked + label::before {
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-position: 0 100%;
+  opacity: 1;
+}
+
 /* ---- cards launch animations ----- */
 @keyframes menu-items-launch {
   0% {
@@ -612,22 +619,19 @@ footer a:hover p {
     transform: translateY(0);
   }
 }
-.menu .cards .card:nth-child(1) {
+.menu .card:nth-child(1) {
   animation: menu-items-launch 700ms 300ms;
   animation-fill-mode: both;
 }
-
-.menu .cards .card:nth-child(2) {
+.menu .card:nth-child(2) {
   animation: menu-items-launch 700ms 500ms;
   animation-fill-mode: both;
 }
-
-.menu .cards .card:nth-child(3) {
+.menu .card:nth-child(3) {
   animation: menu-items-launch 700ms 800ms;
   animation-fill-mode: both;
 }
-
-.menu .cards .card:nth-child(4) {
+.menu .card:nth-child(4) {
   animation: menu-items-launch 700ms 1100ms;
   animation-fill-mode: both;
 }
@@ -636,9 +640,14 @@ footer a:hover p {
 @keyframes loader-anim {
   0% {
     visibility: visible;
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
   }
   100% {
     visibility: hidden;
+    opacity: 0;
   }
 }
 .loader {
@@ -648,12 +657,13 @@ footer a:hover p {
   width: 100vw;
   height: 100vh;
   z-index: 200;
-  background: #333333d9;
+  background: #333;
+  opacity: 1;
   animation: loader-anim 1.5s;
 }
 
 .spinner {
-  font-size: 75px;
+  font-size: 67px;
   position: relative;
   display: inline-block;
   width: 1em;

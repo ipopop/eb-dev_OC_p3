@@ -97,7 +97,6 @@ img {
     display: grid;
     place-items: center;
 }
-/* ---- end center ---- */
 
 /* ---- space-between ---- */
 .space-b {
@@ -106,10 +105,9 @@ img {
     justify-content: space-between;
 }
 
+/* ---- checkbox toggle ---- */
+.toggle {
+    input { display: none; }
 
-/* ---- placeholder img & icons width & height ---- */
-.img {
-    width: 95px;
-    height: 45px;
+    & >* { cursor: pointer; }
 }
-/* ---- end placeholder img & icons width & height ---- */

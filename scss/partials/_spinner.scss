@@ -4,10 +4,16 @@
 @keyframes loader-anim {
     0% {
         visibility: visible;
+        opacity: 1;
+    }
+    
+    50% {
+        opacity: 1;
     }
 
     100% {
         visibility: hidden;
+        opacity: 0;
     }
 }
 
@@ -18,11 +24,12 @@
     width: 100vw;
     height: 100vh;
     z-index: 200;
-    background: $transp-bg;
+    background: $dark;
+    opacity: 1;
     animation: loader-anim 1.5s;
 }
 
-$spinner-size: 75px !default;
+$spinner-size: 67px !default;
 $spinner-color: $primary !default;
 
 .spinner {
