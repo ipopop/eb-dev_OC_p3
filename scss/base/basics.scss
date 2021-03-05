@@ -105,6 +105,16 @@ img {
     justify-content: space-between;
 }
 
+/* ---- space-around ---- */
+.space-rnd {
+    width: 97vw;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+
+
 /* ---- checkbox toggle ---- */
 .toggle {
     input { display: none; }
