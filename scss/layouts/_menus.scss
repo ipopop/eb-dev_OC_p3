@@ -5,15 +5,19 @@
     background: $xtra-light;
     border-radius: 38px 38px 0 0;
     margin-top: -38px;
+    max-width: 378px;
 
     & h1 {
         font-family: 'Shrikhand', serif;
         font-size: 1.7rem;
+        font-weight: 400;
     }
 
     & article,
-      .btn { margin-top: 47px; }
-    
+    .btn {
+        margin-top: 47px;
+    }
+
     & h2 {
         font-size: 1.2rem;
         text-transform: uppercase;
@@ -25,68 +29,74 @@
         padding: 10px;
         cursor: pointer;
         position: relative;
+        max-width: 338px;
+        min-width: auto;
 
-        & p, span { font-size: 0.875rem; }
-    
+        & p,
+        span {
+            font-size: 0.875rem;
+        }
+
         & .card__txt {
             padding: 0;
             width: 100%;
             max-width: 312px;
-            transition: all 350ms;
+            transition: all .5s .1s;
 
-            & p, h3 { white-space: nowrap; } /* for text-overflow */
+            
+            & p,
+            h3 {
+                overflow: hidden; /* for text-overflow */
+                white-space: nowrap; /* for text-overflow */
+                text-overflow: ellipsis;
+            } 
         }
-
-        &:hover .card__txt h3,
-         .card__txt p {
-            overflow: hidden; /* for text-overflow */
-            text-overflow: ellipsis;
-        }
-
+        
         &:hover .card__txt {
             width: 67%;
             max-width: 246px;
+            transition: all .5s;
         }
+        
+        // &:hover .card__txt h3,
+        // .card__txt p {
+        //     overflow: hidden; /* for text-overflow */
+        //     text-overflow: ellipsis;
+        //     transition: all .75s;
+        // }
 
         & span {
+            position: absolute;
             width: 10%;
+            bottom: 10px;
+            right: 0;
             margin-left: 1rem;
             display: flex;
             align-items: flex-end;
+            transform: translateX(0);
+            transition: transform .5s;
         }
-        
+
+        &:hover span {
+            transform: translateX(-60px);
+            transition: all .5s .1s;
+        }
+
         & .card__check {
             display: flex;
             position: absolute;
-            transform: translate(300px, -10px);
-            transition: transform 300ms ease-in-out;
-            
-            & input { display: none; }
-        }
-        
-        & .card__check label {
-            transform: rotate(0turn);
-            transition: transform 350ms ease-in-out;
-
-            &::before {
-            font-family: 'Font Awesome 5 Free';
-            content: "\f057";
-            font-size: 1.25rem;
-            font-weight: 400;
-            color: $lighter;
-            }
-        }
-        
-        &:hover .card__check {
-            background: $tert-mid;
-            margin-left: 1rem;
+            top: 0;
+            right: -60px;
             width: 60px;
             height: 100%;
             padding: 22px 20px;
-            transform: translate(250px, -10px);
+            margin-left: 1rem;
+            background: $tert-mid;
+            transform: translateX(0);
+            transition: transform .5s;
 
-            & label {
-                transform: rotate(2turn);
+            & input {
+                display: none;
             }
 
             /* --- toggle icon --- */        
@@ -94,9 +104,35 @@
                 content: "\f058";
                 font-family: 'Font Awesome 5 Free';
                 font-size: 1.25rem;
-                font-weight: 900;
                 color: $lighter;
             }
+        }
+
+        & .card__check label {
+            transform-origin: 50% 45%;
+            transform: rotate(0turn);
+            transition: all .5s;
+
+
+            &::before {
+                font-family: 'Font Awesome 5 Free';
+                content: "\f057";
+                font-size: 1.25rem;
+                font-weight: 400;
+                color: $lighter;
+            }
+        }
+
+        &:hover .card__check {
+            transform: translateX(-60px);
+            transition: all .5s .1s;
+
+            & label {
+                transform: rotate(1turn);
+                transition: all .5s .1s;
+
+            }
+
         }
     }
 }

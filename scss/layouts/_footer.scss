@@ -25,6 +25,7 @@ footer a:hover p { color: $prim-mid; }
 
 .footer__box {
     width: 100%;
+    flex-direction: column;
     max-width: 375px;
 }
 

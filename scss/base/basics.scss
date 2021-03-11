@@ -45,7 +45,10 @@ main, footer {
     margin: 0 auto;
     width: 100vw;
     overflow-x: hidden;
+    flex-direction: column;
 }
+
+nav, .footer__box { margin: auto; }
 /* ---- end reset & common styles ---- */
 
 /* ---- basic HTML elements ---- */
@@ -99,7 +102,7 @@ img {
 }
 
 /* ---- space-between ---- */
-.space-b {
+.space-btw {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
