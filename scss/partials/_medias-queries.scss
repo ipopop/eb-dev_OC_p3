@@ -1,7 +1,7 @@
 @import "../utils/variables/colors.scss";
 
 /* ---- media queries ---- */
-@media (max-width: 374px) {
+@media (min-width: 320px) and (max-width: 374px) {
     header a span i::before {
         position: absolute;
         transform: translateY(-12px);
@@ -32,35 +32,22 @@
             padding: 20px 10px;
         }
     }
-
+        
     .menu {
-        padding: 38px 1rem 18px;
-        width: 100vw;
-    
-        & h1 { font-size: 7.5vw; }
-
-        .cards {
-            max-width: 96vw;
-            overflow: hidden;
-
-            & .card .card__txt {
-                width: 90%;
-
-                & h3 { font-size: 1rem;}
-
+        .card {
+            & .card__txt {
+                max-width: 282px;
+                
                 & p {
-                    font-size: .8rem;
-                    font-stretch: condensed;
-                }
+                    max-width: 242px;
+                    }
             }
-        }
-        
-        .card .card__check {
-            transform: translate(250px, -10px);
-        }
-        
-        .card:hover .card__check {
-            transform: translate(203px, -10px);
+
+
+            
+            & .card:hover .card__check {
+                transform: translate(0px, 0px);
+            }
         }
     }
 }
