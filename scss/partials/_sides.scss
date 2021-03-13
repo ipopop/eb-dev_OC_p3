@@ -1,45 +1,56 @@
 @import "../utils/variables/colors.scss";
 
-.menu article { position: relative; }
-
 .menu article {
+    position: relative;
+    
+    .cards {
+        position: inherit;
+        z-index: 300;
+    }
+    
     .sides-a,
     .sides-b,
     .sides-c {
+        z-index: 200;
         display: none;
         position: absolute;
-        width: 769px;
+        width: 100vw;
         height: 338px;
-        left: 0;
+        left: 50%;
         bottom: 0;
-        transform: translate(-19%, 7%);
-        
-        .sides__box {
-            width: 630px;
+        transform: translate(-50%, 7%);
+
+            .sides__container {
+            width: 96vw;
+            max-width: 1440px;
             height: 338px;
-            border: 3px solid $light;
-            box-sizing: border-box;
-            border-radius: 40px;
+            background: transparent;
             
             .sides__left {
-                width: 195px;
+                width: 21%;
+                max-width: 370px;
                 height: 240px;
                 background: $xtra-light;
                 border-radius: 30px 0px 0px 30px;
-                transform: translateX(-36%);
+            }
+
+            .sides__center {
+                width: 378px;
+                height: 338px;
+                background: transparent;
             }
             
             .sides__right {
-                width: 195px;
+                width: 21%;
+                max-width: 370px;
                 height: 240px;
                 background: $xtra-light;
                 border-radius: 0px 30px 30px 0px;
-                transform: translateX(36%);
 
             }
 
             .sides__ico {
-                width: 165px;
+                width: calc(100% - 30px);
                 height: 180px;
                 background: radial-gradient(50% 50% at 50% 50%, $sides-ico-mid 44.27%, $sides-ico 100%);
                 border-radius: 20px 0px 0px 20px;
@@ -54,18 +65,33 @@
             }
             
             .sides__img {
-                width: 165px;
+                width: calc(100% - 30px);
                 height: 180px;
                 background-repeat: no-repeat;
                 background-position: center;
                 background-size: cover;
                 border-radius: 0px 20px 20px 0px;
             }
+
+        }
+
+        .sides__box {
+            position: absolute;
+            width: 72%;
+            max-width: 1440px;
+            height: 338px;
+            border: 3px solid $light;
+            box-sizing: border-box;
+            border-radius: 40px;
+            z-index: -1;
         }
     }
 
     .sides-a {
-        .sides__left .sides__ico::before { content: "\f561"; }
+        .sides__left .sides__ico::before {
+            content: "\f561";
+            font-size: 3.7rem;
+        }
         .sides__right .sides__img { background-image: url('../../assets/img/restau/louis-hansel-shotsoflouis-7SVOaAvmLBA-unsplash.jpg'); }
     }
 
@@ -75,11 +101,18 @@
             transform: scaleX(-1);
         }
 
-        .sides__right .sides__ico::before { content: "\f79f"; }
+        .sides__right .sides__ico {
+            border-radius: 0px 20px 20px 0px;
+
+            &::before { content: "\f79f"; }
+        }
     }
 
     .sides-c {
-        .sides__left .sides__ico::before { content: "\f7b6"; }
+        .sides__left .sides__ico::before {
+            content: "\f7b6";
+            font-size: 3.5rem;
+        }
         .sides__right .sides__img { background-image: url('../../assets/img/restau/louis-hansel-shotsoflouis-eWrM2KVca4w-unsplash.jpg'); }
     }
 }
