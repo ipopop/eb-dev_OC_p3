@@ -116,7 +116,19 @@ img {
     justify-content: space-around;
 }
 
+/* ---- left ---- */
+.left {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
 
+/* ---- right ---- */
+.right{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
 
 /* ---- checkbox toggle ---- */
 .toggle {

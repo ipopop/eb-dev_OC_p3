@@ -1,0 +1,89 @@
+@import "../utils/variables/colors.scss";
+
+.menu article { position: relative; }
+
+.menu article {
+    .sides-a,
+    .sides-b,
+    .sides-c {
+        display: none;
+        position: absolute;
+        width: 769px;
+        height: 338px;
+        left: 0;
+        bottom: 0;
+        transform: translate(-19%, 7%);
+        
+        .sides__box {
+            width: 630px;
+            height: 338px;
+            border: 3px solid $light;
+            box-sizing: border-box;
+            border-radius: 40px;
+            
+            .sides__left {
+                width: 195px;
+                height: 240px;
+                background: $xtra-light;
+                border-radius: 30px 0px 0px 30px;
+                transform: translateX(-36%);
+            }
+            
+            .sides__right {
+                width: 195px;
+                height: 240px;
+                background: $xtra-light;
+                border-radius: 0px 30px 30px 0px;
+                transform: translateX(36%);
+
+            }
+
+            .sides__ico {
+                width: 165px;
+                height: 180px;
+                background: radial-gradient(50% 50% at 50% 50%, $sides-ico-mid 44.27%, $sides-ico 100%);
+                border-radius: 20px 0px 0px 20px;
+
+                &::before {
+                    font-family: 'Font Awesome 5 Free';
+                    font-size: 4rem;
+                    font-weight: 900;
+                    background-clip: text;
+                    color: $lighter;
+                }
+            }
+            
+            .sides__img {
+                width: 165px;
+                height: 180px;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+                border-radius: 0px 20px 20px 0px;
+            }
+        }
+    }
+
+    .sides-a {
+        .sides__left .sides__ico::before { content: "\f561"; }
+        .sides__right .sides__img { background-image: url('../../assets/img/restau/louis-hansel-shotsoflouis-7SVOaAvmLBA-unsplash.jpg'); }
+    }
+
+    .sides-b {
+        .sides__left .sides__img {
+            background-image: url('../../assets/img/restau/louis-hansel-shotsoflouis-qRecgNuIwCw-unsplash.jpg'); 
+            transform: scaleX(-1);
+        }
+
+        .sides__right .sides__ico::before { content: "\f79f"; }
+    }
+
+    .sides-c {
+        .sides__left .sides__ico::before { content: "\f7b6"; }
+        .sides__right .sides__img { background-image: url('../../assets/img/restau/louis-hansel-shotsoflouis-eWrM2KVca4w-unsplash.jpg'); }
+    }
+}
+    
+    
+    
+    

@@ -163,7 +163,13 @@
     .restau {
         background: linear-gradient(90deg, $light 0%, $xtra-light 25%,$xtra-light 75%, $light 100%);
     }
-    
+
+    .menu article {
+        .sides-a,
+        .sides-b,
+        .sides-c { display: block; }
+    }
+
     footer {
         padding: 4.25rem 1.25rem;
         display: flex;
