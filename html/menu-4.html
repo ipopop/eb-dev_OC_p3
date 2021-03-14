@@ -1,66 +1,249 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="theme-color" content="#9356DC" />
-        <meta name="viewport" content="width=device-width">
-        <meta name="robots" content="follow">
-        <meta name="description"
-            content="this project is just a web dev student exercice. Ohmyfood! est une entreprise de commande de repas en ligne. Notre concept permet aux utilisateurs de composer leur propre menu et réduire leur temps d’attente dans les restaurants car leur menu est préparé à l’avance. Plus de perte de temps à consulter la carte !">
-        <meta property="og:title" content="ohmyfood! Paris" />
-        <meta property="og:type" content="home page" />
-        <meta property="og:url" content="https://ipopop.github.io/eb-dev_OC_p3" />
-        <meta property="og:image" content="https://ipopop.github.io/eb-dev_OC_p3/assets/logo/logo-ohmyfood.svg" />
-        <meta property="og:site_name" content="ohmyfood! Paris" />
-        <meta property="og:description" content="ohmyfood! Paris - commander son menu au restaurant dès la reservation" />
-        <link rel="apple-touch-icon" sizes="180x180"
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#9356DC" />
+    <meta name="viewport" content="width=device-width">
+    <meta name="robots" content="follow">
+    <meta name="description"
+        content="this project is just a web dev student exercice. Ohmyfood! est une entreprise de commande de repas en ligne. Notre concept permet aux utilisateurs de composer leur propre menu et réduire leur temps d’attente dans les restaurants car leur menu est préparé à l’avance. Plus de perte de temps à consulter la carte !">
+    <meta property="og:title" content="ohmyfood! Paris" />
+    <meta property="og:type" content="home page" />
+    <meta property="og:url" content="https://ipopop.github.io/eb-dev_OC_p3" />
+    <meta property="og:image" content="https://ipopop.github.io/eb-dev_OC_p3/assets/logo/logo-ohmyfood.svg" />
+    <meta property="og:site_name" content="ohmyfood! Paris" />
+    <meta property="og:description" content="ohmyfood! Paris - commander son menu au restaurant dès la reservation" />
+    <link rel="apple-touch-icon" sizes="180x180"
         href="https://raw.githubusercontent.com/ipopop/eb-dev_OC_p3/main/assets/favicon/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32"
-            href="https://raw.githubusercontent.com/ipopop/eb-dev_OC_p3/main/assets/favicon/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16"
-            href="https://ipopop.github.io/eb-dev_OC_p3/assets/favicon/favicon-16x16.png">
-        <link rel="manifest" href="https://ipopop.github.io/eb-dev_OC_p3/assets/favicon/site.webmanifest">
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&family=Shrikhand&display=swap" rel="stylesheet">
-        <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="https://raw.githubusercontent.com/ipopop/eb-dev_OC_p3/main/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="https://ipopop.github.io/eb-dev_OC_p3/assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="https://ipopop.github.io/eb-dev_OC_p3/assets/favicon/site.webmanifest">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&family=Shrikhand&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
         integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
         crossorigin="anonymous" />
-        <link rel="preload" href="../css/style.css" as="style">
-        <link rel="stylesheet" href="../css/style.css">
-        <title>ohmyfood! Paris - commander son menu au restaurant dès la reservation</title>
-    </head>
+    <link rel="preload" href="../css/prefixed/style.css" as="style">
+    <link rel="stylesheet" href="../css/prefixed/style.css">
+    <title>ohmyfood! Paris - commander son menu au restaurant dès la reservation</title>
+</head>
 
-<body>
+<body class="page__menus m-4">
     <header class="center">
-        <a class="center" href="../index.html">
-            <i class="fa fa-arrow-left"></i>
+        <a class="h-center" href="../index.html">
+            <span><i class="fa fa-arrow-left"></i></span>
             <img src="../assets/logo/logo-ohmyfood.svg" alt="logo-ohmyfood">
         </a>
     </header>
 
     <main class="center">
-        <img src="../assets/img/menus/menu-4.jpg" alt="">
+        <div class="menu__banner">
+            <img src="../assets/img/restau/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="Le délice des sens">
+            <span></span>
+        </div>
+
+        <section class="menu">
+
+            <div class="menu__title space-btw">
+                <h1>Le délice des sens</h1>
+                <div class="icon-heart toggle">
+                    <input id="toggle1" class="switch" type="checkbox" checked>
+                    <label for="toggle1"></label>
+                </div>
+            </div>
+
+            <article class="starters">
+                <h2>Entrées</h2>
+                <span class="underline"></span>
+
+                <div class="cards">
+
+                    <div class="card">
+                        <div class="card__txt">
+                            <h3>Tartare de thon</h3>
+                            <p>Assaisonné au yuzu</p>
+                        </div>
+                        <span><strong>25€</strong></span>
+                        <div class="card__check toggle center">
+                            <input id="E1" class="toggle" type="checkbox" checked>
+                            <label for="E1"></label>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card__txt">
+                            <h3>Bouchée de homard croustillant</h3>
+                            <p>Et sa farandole de petits légumes</p>
+                        </div>
+                        <span><strong>35€</strong></span>
+                        <div class="card__check toggle center">
+                            <input id="E2" class="toggle" type="checkbox" checked>
+                            <label for="E2"></label>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card__txt">
+                            <h3>Velouté de cèpes</h3>
+                            <p>Aux truffes</p>
+                        </div>
+                        <span><strong>20€</strong></span>
+                        <div class="card__check toggle center">
+                            <input id="E3" class="toggle" type="checkbox" checked>
+                            <label for="E3"></label>
+                        </div>
+                    </div>
+                </div>
+                <span class="sides-a h-center">
+                    <span class="sides__container h-center v-center">
+                        <span class="sides__left right v-center">
+                            <span class="sides__ico center"></span>
+                        </span>
+                        <span class="sides__center"></span>
+                        <span class="sides__right left v-center">
+                            <span class="sides__img"></span>
+                        </span>
+                    </span>
+                    <span class="sides__box"></span>
+                </span>
+            </article>
+            <article class="main-courses">
+                <h2>Plats</h2>
+                <span class="underline"></span>
+
+                <div class="cards">
+                    <div class="card">
+                        <div class="card__txt">
+                            <h3>Poulet rôti aux herbes de Provence</h3>
+                            <p>Et sa crème de truffe</p>
+                        </div>
+                        <span><strong>40€</strong></span>
+                        <div class="card__check toggle center">
+                            <input id="P1" class="toggle" type="checkbox" checked>
+                            <label for="P1"></label>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card__txt">
+                            <h3>Langouste rôtie</h3>
+                            <p>Et ses légumes de saison</p>
+                        </div>
+                        <span><strong>35€</strong></span>
+                        <div class="card__check toggle center">
+                            <input id="P2" class="toggle" type="checkbox" checked>
+                            <label for="P2"></label>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card__txt">
+                            <h3>Côte de boeuf Angus</h3>
+                            <p>Et sa purée de panais</p>
+                        </div>
+                        <span><strong>44€</strong></span>
+                        <div class="card__check toggle center">
+                            <input id="P3" class="toggle" type="checkbox" checked>
+                            <label for="P3"></label>
+                        </div>
+                    </div>
+                </div>
+                <span class="sides-b h-center">
+                    <span class="sides__container h-center v-center">
+                        <span class="sides__left right v-center">
+                            <span class="sides__img"></span>
+                        </span>
+                        <span class="sides__center"></span>
+                        <span class="sides__right left v-center">
+                            <span class="sides__ico center"></span>
+                        </span>
+                    </span>
+                    <span class="sides__box"></span>
+                </span>
+            </article>
+            <article class="desserts">
+                <h2>Desserts</h2>
+                <span class="underline"></span>
+
+                <div class="cards">
+                    <div class="card">
+                        <div class="card__txt">
+                            <h3>Farandole de desserts</h3>
+                            <p>Du chef</p>
+                        </div>
+                        <span><strong>18€</strong></span>
+                        <div class="card__check toggle center">
+                            <input id="D1" class="toggle" type="checkbox" checked>
+                            <label for="D1"></label>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card__txt">
+                            <h3>Crème brulée</h3>
+                            <p>Revisitée</p>
+                        </div>
+                        <span><strong>22€</strong></span>
+                        <div class="card__check toggle center">
+                            <input id="D2" class="toggle" type="checkbox" checked>
+                            <label for="D2"></label>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card__txt">
+                            <h3>Tiramisu</h3>
+                            <p>À la noisette</p>
+                        </div>
+                        <span><strong>23€</strong></span>
+                        <div class="card__check toggle center">
+                            <input id="D3" class="toggle" type="checkbox" checked>
+                            <label for="D3"></label>
+                        </div>
+                    </div>
+                </div>
+                <span class="sides-c h-center">
+                    <span class="sides__container h-center v-center">
+                        <span class="sides__left right v-center">
+                            <span class="sides__ico center"></span>
+                        </span>
+                        <span class="sides__center"></span>
+                        <span class="sides__right left v-center">
+                            <span class="sides__img"></span>
+                        </span>
+                    </span>
+                    <span class="sides__box"></span>
+                </span>
+            </article>
+
+            <div class="btn big__btn">
+                <a href="#" class="button" role="button">Commander</a>
+            </div>
+
+        </section> <!-- menu -->
     </main>
 
     <footer class="center">
         <div class="footer__box">
-            <a href="#">
+            <a href="#top">
                 <h2>ohmyfood</h2>
             </a>
             <div class="footer__content">
-                <a href="#">
+                <a href="#top">
                     <i class="fa fa-utensils"></i>
                     <p>Proposer un restaurant</p>
-    
+
                 </a>
-                <a href="#">
+                <a href="#top">
                     <i class="fa fa-hands-helping"></i>
                     <p>Devenir partenaire</p>
                 </a>
-                <a href="#">
+                <a href="#top">
                     <p>Mentions légales</p>
                 </a>
                 <a href="mailto:contact@ohmyfood-corp.com">
@@ -69,7 +252,7 @@
             </div>
         </div>
     </footer>
-    
+
 </body>
 
 </html>

@@ -1,5 +1,29 @@
 @import "../utils/variables/colors.scss";
 
+.menu__banner {
+    position: relative;
+    height: 426px;
+    overflow: hidden;
+    z-index: -1;
+
+    & img { width: 640px;}
+}
+
+.m-2 {
+    .menu__banner img {
+    position: absolute;
+    bottom: -230px;
+    }
+
+    .menu article .sides-a {
+        height: 420px;
+        transform: translate(-50%, 6%);
+
+        .sides__container,
+        .sides__box { height: 418px; }
+    }
+}
+
 .menu {
     padding: 38px 20px 18px;
     background: $xtra-light;
@@ -25,12 +49,15 @@
     }
 
     & .card {
+        position: relative;
         display: flex;
+        min-width: auto;
+        max-width: 338px;
         padding: 10px;
         cursor: pointer;
-        position: relative;
-        max-width: 338px;
-        min-width: auto;
+        box-shadow: $shadow;
+
+        &:hover { box-shadow: $hover-shadow-light; }
 
         & p,
         span {
@@ -57,13 +84,6 @@
             max-width: 246px;
             transition: all .5s;
         }
-        
-        // &:hover .card__txt h3,
-        // .card__txt p {
-        //     overflow: hidden; /* for text-overflow */
-        //     text-overflow: ellipsis;
-        //     transition: all .75s;
-        // }
 
         & span {
             position: absolute;

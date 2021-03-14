@@ -61,14 +61,11 @@
         margin-bottom: -50px;
     }
         
-    .menu__banner {
-        position: relative;    
+    .menu__banner {    
         height: 33vh;
         width: 100vw;
         min-height: 250px;
         max-height: 250px;
-        overflow: hidden;
-        z-index: -1;
     
         & img {
             position: absolute;
@@ -110,15 +107,9 @@
 
 @media (min-width: 640px) {
     .menu__banner {
-        width: 100vw;
         display: flex;
         justify-content: center;
-    }
-
-    .menu__banner {
-        position: relative;
-        z-index: -1;
-        overflow: hidden;
+        width: 100vw;
         
         & span {
             
