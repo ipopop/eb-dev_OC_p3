@@ -2,10 +2,20 @@
 
 .menu__banner {
     position: relative;
+    height: 33vh;
+    width: 100vw;
+    min-height: 220px;
+    max-height: 250px;
     overflow: hidden;
     z-index: -1;
 
-    & img { width: 640px;}
+    & img {
+        position: absolute;
+        width: 100vw;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
 }
 
 .m-2 {
