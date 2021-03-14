@@ -118,6 +118,8 @@
             background: $tert-mid;
             transform: translateX(0);
             transition: transform .5s;
+            visibility: hidden;
+            border-radius: 0 1rem 1rem 0;
 
             & input { display: none; }
 
@@ -148,6 +150,7 @@
         &:hover .card__check {
             transform: translateX(-60px);
             transition: all .5s .1s;
+            visibility: visible;
 
             & label {
                 transform: rotate(1turn);
