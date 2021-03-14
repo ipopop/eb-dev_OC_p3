@@ -203,6 +203,15 @@
             &:nth-child(2) { grid-row-start: 2; }
         }
     }
+
+    .page__menus footer {
+        .footer__content {
+            padding-left: 0;
+            gap: 1rem 10rem;
+            
+            a { width: 100%; }
+        }
+    }
 }
 
 @media (min-width: 1000px) {
@@ -233,20 +242,23 @@
         .sides__box { width: 95.5%; }
     }
 
+    .page__menus footer .footer__content { gap: 1rem 15rem; }
 }
 
 @media (min-width: 1280px) {
-    
+    .page__menus footer .footer__content { gap: 1rem 20rem; }
 }
 
 @media (min-width: 1440px) {
     .nav__box, .restau .cards, .footer__content {
         grid-template-columns: repeat(3, auto);
     }
-
+    
     footer {
         & .footer__box { max-width: 1146px; }
     }
+
+    .page__menus footer .footer__content { grid-template-columns: repeat(3, 200px); }
 }
         
 @media (min-width: 1920px) {
