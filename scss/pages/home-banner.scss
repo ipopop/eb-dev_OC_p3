@@ -30,7 +30,6 @@
     box-shadow: $shadow;
     @include gradientColorSmoothAnim($primary, $secondary); // ($start, $end)
     border-radius: 28px;
-    // border: solid 1px $light;
     margin: 20px auto 40px;
     max-width: 222px;
     

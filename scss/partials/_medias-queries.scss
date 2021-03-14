@@ -38,16 +38,10 @@
             & .card__txt {
                 max-width: 282px;
                 
-                & p {
-                    max-width: 242px;
-                    }
+                & p { max-width: 242px; }
             }
 
-
-            
-            & .card:hover .card__check {
-                transform: translate(0px, 0px);
-            }
+            & .card:hover .card__check { transform: translate(0px, 0px); }
         }
     }
 }
@@ -57,9 +51,7 @@
         padding: 4.25rem 1.25rem;
     }
 
-    .menu {
-        margin-bottom: -50px;
-    }
+    .menu { margin-bottom: -50px; }
         
     .menu__banner {    
         height: 33vh;
@@ -78,10 +70,8 @@
 }
 
 @media (min-width: 450px) {
-    .banner {
-        background: linear-gradient(90deg, $sec-light 0%, $xtra-light 20%,$xtra-light 80%, $sec-light 100%);
-    }
-
+    .banner { background: linear-gradient(90deg, $sec-light 0%, $xtra-light 20%,$xtra-light 80%, $sec-light 100%); }
+    
     footer {
         height: auto;
         padding: 5rem 2rem;
@@ -91,14 +81,10 @@
 }
 
 @media (min-width: 500px) {
-    nav, .restau {
-        padding: 4.25rem 1.25rem;
-    }
+    nav, .restau { padding: 4.25rem 1.25rem; }
 
-    .restau .cards {
-        width: auto;
+    .restau .cards { width: auto; }
 
-    }
     .restau .card {
         min-width: 350px;
         margin-bottom: 0.5rem;
@@ -111,21 +97,17 @@
         justify-content: center;
         width: 100vw;
         
-        & span {
-            
-            &::after {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 50%;
-                transform: translateX(-50%);
-                width: 100vw;
-                height: 426px;
-                background: linear-gradient(90deg, $banner-mid 0%, $banner 25%, $banner 75%, $banner-mid 100%);
-                z-index: -2;
-            }
+        & span::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100vw;
+            height: 426px;
+            background: linear-gradient(90deg, $banner-mid 0%, $banner 25%, $banner 75%, $banner-mid 100%);
+            z-index: -2;
         }
-        
     }
 
     .menu article {
@@ -138,14 +120,13 @@
         background: linear-gradient(90deg, $transp-darker 0%, $dark 50%, $transp-darker 100%);
         padding: 4.25rem 1.25rem;
 
-        & .footer__box {
-            max-width: 320px;
-        }
+        & .footer__box { max-width: 320px; }
     }
 }
 
 @media (min-width: 800px) {
-    
+    .menu .banner__content { height: 426px; }
+
     .banner h1,
     .banner p { max-width: 70vw; }
 
@@ -177,9 +158,7 @@
         .footer__box {
             max-width: 748px;
             
-            & > a:nth-child(1) {
-            margin-bottom: .4rem;
-            }
+            & > a:nth-child(1) { margin-bottom: .4rem; }
         }
     }
     
@@ -253,13 +232,9 @@
 }
         
 @media (min-width: 1920px) {
-    .restau .cards, .footer__content {
-        grid-template-columns: repeat(4, auto);
-    }
+    .restau .cards, .footer__content { grid-template-columns: repeat(4, auto); }
 
-    footer .footer__box {
-        max-width: 1544px;
-    }
+    footer .footer__box { max-width: 1544px; }
 
     .footer__content a:nth-child(2) { grid-row-start: 1; }    
 }

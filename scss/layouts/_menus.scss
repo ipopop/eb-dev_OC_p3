@@ -2,7 +2,6 @@
 
 .menu__banner {
     position: relative;
-    height: 426px;
     overflow: hidden;
     z-index: -1;
 
@@ -38,9 +37,7 @@
     }
 
     & article,
-    .btn {
-        margin-top: 47px;
-    }
+    .btn { margin-top: 47px; }
 
     & h2 {
         font-size: 1.2rem;
@@ -60,9 +57,7 @@
         &:hover { box-shadow: $hover-shadow-light; }
 
         & p,
-        span {
-            font-size: 0.875rem;
-        }
+        span { font-size: 0.875rem; }
 
         & .card__txt {
             padding: 0;
@@ -70,7 +65,6 @@
             max-width: 312px;
             transition: all .5s .1s;
 
-            
             & p,
             h3 {
                 overflow: hidden; /* for text-overflow */
@@ -115,9 +109,7 @@
             transform: translateX(0);
             transition: transform .5s;
 
-            & input {
-                display: none;
-            }
+            & input { display: none; }
 
             /* --- toggle icon --- */        
             & .toggle:checked + label:before {
@@ -150,9 +142,7 @@
             & label {
                 transform: rotate(1turn);
                 transition: all .5s .1s;
-
             }
-
         }
     }
 }
