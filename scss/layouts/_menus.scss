@@ -148,9 +148,9 @@
         }
 
         &:hover .card__check {
+            visibility: visible;
             transform: translateX(-60px);
             transition: all .5s .1s;
-            visibility: visible;
 
             & label {
                 transform: rotate(1turn);
