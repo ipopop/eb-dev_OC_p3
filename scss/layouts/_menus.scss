@@ -18,6 +18,21 @@
     }
 }
 
+.m-2 {
+    .menu__banner img {
+    position: absolute;
+    bottom: -230px;
+    }
+
+    .menu article .sides-a {
+        height: 420px;
+        transform: translate(-50%, 6%);
+
+        .sides__container,
+        .sides__box { height: 418px; }
+    }
+}
+
 .menu {
     padding: 38px 20px 18px;
     background: $xtra-light;
