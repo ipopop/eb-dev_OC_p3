@@ -10,21 +10,21 @@ header {
     z-index: 300;
     box-shadow: $shadow;
     
-    & a {
+    a {
         width: 100%;
         height: auto;
         align-items: center;
         position: relative;
         
-        & span {
+        span {
             width: 0;
             
-            & i::before {
+            i::before {
                 position: absolute;
                 transform: translate(-75px, -12px);
             }
         }
     }
     
-    & img { max-width: 165px; }
+    img { max-width: 165px; }
 }

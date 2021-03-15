@@ -8,7 +8,7 @@
     padding: 20px;
     width: 100%;
 
-    & h1 {
+    h1 {
         font-size: 23px;
         max-width: 250px;
         margin: 20px;
@@ -33,7 +33,7 @@
     margin: 20px auto 40px;
     max-width: 222px;
     
-    & a {
+    a {
         display: inline-block;
         color: $lighter;
         padding: 13px 22px;

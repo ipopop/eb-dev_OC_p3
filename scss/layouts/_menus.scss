@@ -9,7 +9,7 @@
     overflow: hidden;
     z-index: -1;
 
-    & img {
+    img {
         position: absolute;
         width: 100vw;
         top: 50%;
@@ -40,22 +40,22 @@
     margin-top: -38px;
     max-width: 378px;
 
-    & h1 {
+    h1 {
         font-family: 'Shrikhand', serif;
         font-size: 1.7rem;
         font-weight: 400;
     }
 
-    & article,
+    article,
     .btn { margin-top: 47px; }
 
-    & h2 {
+    h2 {
         font-size: 1.2rem;
         text-transform: uppercase;
         font-weight: 300;
     }
 
-    & .card {
+    .card {
         position: relative;
         display: flex;
         min-width: auto;
@@ -66,16 +66,16 @@
 
         &:hover { box-shadow: $hover-shadow-light; }
 
-        & p,
+        p,
         span { font-size: 0.875rem; }
 
-        & .card__txt {
+        .card__txt {
             padding: 0;
             width: 100%;
             max-width: 312px;
             transition: all .5s .1s;
 
-            & p,
+            p,
             h3 {
                 overflow: hidden; /* for text-overflow */
                 white-space: nowrap; /* for text-overflow */
@@ -89,7 +89,7 @@
             transition: all .5s;
         }
 
-        & span {
+        span {
             position: absolute;
             width: 10%;
             bottom: 10px;
@@ -106,7 +106,7 @@
             transition: all .5s .1s;
         }
 
-        & .card__check {
+        .card__check {
             display: flex;
             position: absolute;
             top: 0;
@@ -121,10 +121,10 @@
             visibility: hidden;
             border-radius: 0 1rem 1rem 0;
 
-            & input { display: none; }
+            input { display: none; }
 
             /* --- toggle icon --- */        
-            & .toggle:checked + label:before {
+            .toggle:checked + label:before {
                 content: "\f058";
                 font-family: 'Font Awesome 5 Free';
                 font-size: 1.25rem;
@@ -132,7 +132,7 @@
             }
         }
 
-        & .card__check label {
+        .card__check label {
             transform-origin: 50% 45%;
             transform: rotate(0turn);
             transition: all .5s;
@@ -152,7 +152,7 @@
             transform: translateX(-60px);
             transition: all .5s .1s;
 
-            & label {
+            label {
                 transform: rotate(1turn);
                 transition: all .5s .1s;
             }

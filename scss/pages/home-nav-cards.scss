@@ -4,7 +4,7 @@
 .nav__box, .restau { flex-direction: column; }
 
 .nav__box {
-    & a {
+    a {
         position: relative;
         display: flex;
         justify-content: flex-start;
@@ -23,7 +23,7 @@
         }
     }
     
-    & a span {
+    a span {
         content: '';
         max-width: 24px;
         max-height: 24px;
@@ -36,7 +36,7 @@
         left: -10px;
     }
     
-    & i {
+    i {
         width: .86rem;
         margin-top: 4px;
         margin-right: 25px;
@@ -44,13 +44,11 @@
         font-size: 1.4rem;
     }
 
-    & .fa-mobile-alt {
-        margin-top: 1px;
-    }
+    .fa-mobile-alt { margin-top: 1px; }
     
-    & a:nth-last-child(-n+2) i { font-size: 1rem; }
+    a:nth-last-child(-n+2) i { font-size: 1rem; }
     
-    & p { font-weight: bold; }
+    p { font-weight: bold; }
 }
 
 /* ---- restaurants ---- */
@@ -82,7 +80,7 @@
     height: 175px;
     overflow: hidden;
 
-    & img { position: absolute; }
+    img { position: absolute; }
 }
 
 .card__new {
@@ -106,9 +104,9 @@
     position: relative;
     max-width: 96%;
 
-    & p { font-weight: lighter; }
+    p { font-weight: lighter; }
 
-    & form {
+    form {
         position: absolute;
         top: 0;
         right: 0;

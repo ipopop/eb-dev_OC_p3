@@ -4,14 +4,14 @@ footer {
     height: 197px;
     padding: 20px 25px;
 
-    & h2 {
+    h2 {
         font-family: 'Shrikhand', serif;
         font-size: 1.1rem;
         letter-spacing: 0.034em;
         font-weight: normal;
     }
     
-    & i { font-size: 1rem; }
+    i { font-size: 1rem; }
 }
 
 footer a,
@@ -32,7 +32,7 @@ footer a:hover p { color: $prim-mid; }
 .footer__content {
     margin-top: 1rem;
     
-    & a {
+    a {
         display: flex;
         align-items: center;
         margin-top: 3px;

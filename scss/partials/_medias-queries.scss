@@ -28,15 +28,15 @@
     .card {
         max-width: 96vw;
 
-        & .card__img { height: 150px; }
+        .card__img { height: 150px; }
 
-        & .card__content { max-width: 100%; }
+        .card__content { max-width: 100%; }
     }
 
     .nav__box {
         max-width: 85vw;
         
-        & a {
+        a {
             width: auto;
             padding: 20px 10px;
         }
@@ -44,13 +44,13 @@
         
     .menu {
         .card {
-            & .card__txt {
+            .card__txt {
                 max-width: 282px;
                 
-                & p { max-width: 242px; }
+                p { max-width: 242px; }
             }
 
-            & .card:hover .card__check { transform: translate(0px, 0px); }
+            .card:hover .card__check { transform: translate(0px, 0px); }
         }
     }
 
@@ -70,7 +70,7 @@
         min-height: 250px;
         max-height: 250px;
     
-        & img {
+        img {
             position: absolute;
             width: 100vw;
             top: 50%;
@@ -87,7 +87,7 @@
         height: auto;
         padding: 2.5rem 2rem;
 
-        & .footer__content a { margin-top: 1rem; }
+        .footer__content a { margin-top: 1rem; }
     } 
 }
 
@@ -109,9 +109,9 @@
         width: 100vw;
         max-height: 350px;
 
-        & img { width: 640px; }
+        img { width: 640px; }
         
-        & span::after {
+        span::after {
             content: "";
             position: absolute;
             top: 0;
@@ -134,7 +134,7 @@
         background: linear-gradient(90deg, $transp-darker 0%, $dark 50%, $transp-darker 100%);
         padding: 4.25rem 1.25rem;
 
-        & .footer__box { max-width: 320px; }
+        .footer__box { max-width: 320px; }
     }
 }
 
@@ -234,13 +234,9 @@
 }
 
 @media (min-width: 1440px) {
-    .nav__box, .restau .cards, .footer__content {
-        grid-template-columns: repeat(3, auto);
-    }
+    .nav__box, .restau .cards, .footer__content { grid-template-columns: repeat(3, auto); }
     
-    footer {
-        & .footer__box { max-width: 1146px; }
-    }
+    footer .footer__box { max-width: 1146px; }
 
     .page__menus footer .footer__content { grid-template-columns: repeat(3, 200px); }
 }
