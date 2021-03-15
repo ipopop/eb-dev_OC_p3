@@ -38,9 +38,14 @@
     
     & i {
         width: .86rem;
+        margin-top: 4px;
         margin-right: 25px;
         margin-left: 22px;
         font-size: 1.4rem;
+    }
+
+    & .fa-mobile-alt {
+        margin-top: 1px;
     }
     
     & a:nth-last-child(-n+2) i { font-size: 1rem; }
