@@ -142,15 +142,16 @@ img {
 }
 
 /* ---- hover ---- */
-a:not(p):hover { transform: scale(1.002); }
+.card {
+    & img { transition: all 2s; }
 
-img {
-    transition: all 2s;
-
-    &:hover {
-        transform: scale(1.2);
+    &:hover img {
+        transform: scale(1.1);
         transition: all 2s;
     }
 }
 
 .nav__box a p:hover { text-shadow: $txt-shadow-light; }
+
+footer a:hover { transform: scale(1.005); }
+footer a:hover p { text-shadow: $txt-shadow-dark; }
