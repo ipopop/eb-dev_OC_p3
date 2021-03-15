@@ -1,5 +1,7 @@
 @import "../utils/variables/colors.scss";
 
+.img-2x { display:none; }
+
 /* ---- media queries ---- */
 @media (min-width: 250px) and (max-width: 374px) {
     header a span i::before {
@@ -80,6 +82,9 @@
 
 @media (min-width: 450px) {
     .banner { background: linear-gradient(90deg, $sec-light 0%, $xtra-light 20%,$xtra-light 80%, $sec-light 100%); }
+
+    .img-1x { display:none; }
+    .img-2x { display:block; }
 
     footer {
         height: auto;
