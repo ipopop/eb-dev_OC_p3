@@ -1,40 +1,67 @@
 @import "../utils/variables/colors.scss";
 
-.icon-heart label::before,
-.icon-heart input:checked + label::before {
-    content: "\f004";
-    font-family: 'Font Awesome 5 Free';
-    font-size: 1.5rem;
-    font-weight: 900;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-stroke-width: 1px;
-    text-stroke-width: 1px;
-    -webkit-text-stroke-color: $dark;
-    text-stroke-color: $dark;
-    background-size: 100% 200%;
-    background-image: linear-gradient(to bottom, transparent 50%,$primary 50%, $secondary 80%);
-    animation-fill-mode: forwards;
-    color: transparent;
-}
+.icon-heart {
+    transform: scale(1);
+    
+    label::before,
+    input:checked + label::before {
+        content: "\f004";
+        font-family: 'Font Awesome 5 Free';
+        font-size: 1.5rem;
+        font-weight: 900;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-stroke-width: 1px;
+        text-stroke-width: 1px;
+        -webkit-text-stroke-color: $dark;
+        text-stroke-color: $dark;
+        background-size: 100% 200%;
+        background-image: linear-gradient(to bottom, transparent 50%,$primary 50%, $secondary 80%);
+        animation-fill-mode: forwards;
+        color: transparent;
+    }
+    
+    label::before {
+        background: $sec-mid; /* fallback color if gradients are not supported */
+        background: linear-gradient(to bottom, $sec-mid 0%, $primary 23%, $secondary 55%, $sec-mid 90%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        opacity: .9;
+    }
+    
+    input:checked + label::before {
+        color: transparent;
+        opacity: 1;
+    }
+    
+    &:hover label::before,
+    &:hover input:checked + label::before {
+        background-clip: text;
+        background-position: 0 100%;
+        color: transparent;
+        opacity: 1;
+    }
 
-.icon-heart label::before {
-    background: $sec-mid; /* fallback color if gradients are not supported */
-    background: linear-gradient(to bottom, $sec-mid 0%, $primary 23%, $secondary 55%, $sec-mid 90%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    opacity: .9;
+    &:hover { animation: pulse 1.7s; }
 }
-
-.icon-heart input:checked + label::before {
-    color: transparent;
-    opacity: 1;
-}
-
-.icon-heart:hover label::before,
-.icon-heart:hover input:checked + label::before {
-    background-clip: text;
-    background-position: 0 100%;
-    color: transparent;
-    opacity: 1;
-}
+    
+@keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    5% {
+      transform: scale(1.1);
+    }
+    10% {
+      transform: scale(1);
+    }
+    15% {
+      transform: scale(1.2);
+    }
+    50% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
