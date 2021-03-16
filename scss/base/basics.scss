@@ -89,7 +89,7 @@ img {
 }
 /* ---- end basic HTML elements ---- */
 
-/* ---- center ---- */
+/* ---- justify ---- */
 .h-center {
     display: flex;
     justify-content: center;
@@ -105,14 +105,12 @@ img {
     place-items: center;
 }
 
-/* ---- space-between ---- */
 .space-btw {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-/* ---- space-around ---- */
 .space-rnd {
     width: 97vw;
     flex-wrap: wrap;
@@ -120,14 +118,12 @@ img {
     justify-content: space-around;
 }
 
-/* ---- left ---- */
 .left {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
 }
 
-/* ---- right ---- */
 .right{
     display: flex;
     flex-direction: row;
@@ -141,7 +137,7 @@ img {
     & >* { cursor: pointer; }
 }
 
-/* ---- hover ---- */
+/* ---- hover's ---- */
 .card {
     img { transition: all 2s; }
 

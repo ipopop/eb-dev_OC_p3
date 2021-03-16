@@ -43,7 +43,9 @@
     h1 {
         font-family: 'Shrikhand', serif;
         font-size: 1.7rem;
-        font-weight: 400;
+        font-weight: lighter;
+
+        .ltr-space { letter-spacing: .3px; }
     }
 
     article,
