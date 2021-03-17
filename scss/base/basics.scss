@@ -147,7 +147,7 @@ img {
     }
 }
 
-.nav__box a p:hover { text-shadow: $txt-shadow-light; }
+.nav__box a:hover p { text-shadow: $txt-shadow-light; }
 
 footer a:hover { transform: scale(1.005); }
 footer a:hover p { text-shadow: $txt-shadow-dark; }
