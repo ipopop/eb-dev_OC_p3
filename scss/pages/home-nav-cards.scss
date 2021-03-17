@@ -91,12 +91,13 @@
     border-radius: 2px;
     background: $tert-mid;
     font-size: .8rem;
-    color: $tertiary;
+    color: $tert-dark;
     padding-top: 3.5px;
     text-align: center;
     font-weight: 500;
     top: 14px;
     right: 12px;
+    text-shadow: $txt-shadow-light;
     z-index: 10;
 }
 
