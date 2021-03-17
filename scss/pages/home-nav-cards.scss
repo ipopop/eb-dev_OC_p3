@@ -71,6 +71,7 @@
     background: $lighter;
     border-radius: 1rem;
     overflow: hidden;
+    box-shadow: $card-shadow;
     
     &:hover { box-shadow: $shadow; }
 }
