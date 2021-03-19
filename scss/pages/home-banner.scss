@@ -25,28 +25,3 @@
     font-weight: 300;
     max-width: 300px;
 }
-
-.big__btn {
-    box-shadow: $shadow;
-    @include gradientColorSmoothAnim($primary, $secondary); // ($start, $end)
-    border-radius: 28px;
-    margin: 20px auto 40px;
-    max-width: 222px;
-    
-    a {
-        display: inline-block;
-        color: $lighter;
-        padding: 13px 22px;
-        border-radius: 28px;
-    }
-
-    &::before { display: none; }
-
-    &:hover {
-        background: linear-gradient(.97turn, $primary, $secondary);
-        opacity: .85;
-        border-color: $lighter;
-        box-shadow: $hover-shadow;
-        text-shadow: $txt-shadow;
-    }
-}

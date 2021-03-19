@@ -1,0 +1,26 @@
+@import "../utils/variables/colors.scss";
+
+.big__btn {
+    @include gradientColorSmoothAnim($primary, $secondary); // ($start, $end)
+    border-radius: 28px;
+    margin: 20px auto 40px;
+    max-width: 222px;
+    text-shadow: $txt-shadow;
+    box-shadow: $shadow;
+    
+    a {
+        display: inline-block;
+        color: $lighter;
+        padding: 13px 22px;
+        border-radius: 28px;
+    }
+
+    &::before { display: none; }
+
+    &:hover {
+        background: linear-gradient(.97turn, $primary, $secondary);
+        opacity: .85;
+        border-color: $lighter;
+        box-shadow: $hover-shadow;
+    }
+}

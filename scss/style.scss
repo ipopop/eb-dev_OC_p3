@@ -1,12 +1,13 @@
 @import "base/basics.scss";
-@import "utils/mixins/gradient-animation.scss";
 @import "utils/variables/colors.scss";
 @import "layouts/header";
 @import "pages/map-search-form.scss";
 @import "pages/home-banner.scss";
-@import "pages/home-nav-cards.scss";
+@import "pages/home-nav-and-cards.scss";
 @import "layouts/menus";
 @import "layouts/footer";
+@import "partials/big-btn";
+@import "partials/menu-card";
 @import "partials/icon-heart";
 @import "partials/cards-anim";
 @import "partials/sides";
