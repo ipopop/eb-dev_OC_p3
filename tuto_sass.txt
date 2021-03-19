@@ -20,13 +20,15 @@ scss
 │   └── _menus.scss
 ├── pages
 │   ├── home-banner.scss
-│   ├── home-cards-nav.scss
+│   ├── home-nav-cards.scss
 │   └── map-search-form.scss
 ├── partials
 │   ├── _cards-anim.scss
 │   ├── _icon-heart.scss
 │   ├── _medias-queries.scss
-│   └── _spinner.scss
+│   ├── _sides.scss
+│   ├── _spinner.scss
+│   └── _spinner-heart.scss
 ├── style.scss
 └── utils
     ├── mixins
