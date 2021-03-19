@@ -2,15 +2,15 @@
     "name": "ohmyfood",
     "short_name": "oh",
     "icons": [{
-        "src": "https://github.com/ipopop/eb-dev_OC_p3/blob/main/assets/favicon/android-chrome-192x192.png",
+        "src": "https://github.com/ipopop/BaroniEmmanuel_3_03122020/blob/main/assets/favicon/android-chrome-192x192.png",
         "sizes": "192x192",
         "type": "image/png"
     }, {
-        "src": "https://github.com/ipopop/eb-dev_OC_p3/blob/main/assets/favicon/android-chrome-512x512.png",
+        "src": "https://github.com/ipopop/BaroniEmmanuel_3_03122020/blob/main/assets/favicon/android-chrome-512x512.png",
         "sizes": "512x512",
         "type": "image/png"
     }, {
-        "src": "https://github.com/ipopop/eb-dev_OC_p3/blob/main/assets/favicon/maskable_favicon.png",
+        "src": "https://github.com/ipopop/BaroniEmmanuel_3_03122020/blob/main/assets/favicon/maskable_favicon.png",
         "sizes": "196x196",
         "type": "image/png",
         "purpose": "any maskable"

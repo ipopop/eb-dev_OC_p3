@@ -20,19 +20,19 @@ scss
 │   └── _menus.scss
 ├── pages
 │   ├── home-banner.scss
-│   ├── home-nav-cards.scss
+│   ├── home-nav-and-cards.scss
 │   └── map-search-form.scss
 ├── partials
+│   ├── _big-btn.scss
 │   ├── _cards-anim.scss
 │   ├── _icon-heart.scss
 │   ├── _medias-queries.scss
+│   ├── _menu-card.scss
 │   ├── _sides.scss
 │   ├── _spinner.scss
 │   └── _spinner-heart.scss
 ├── style.scss
 └── utils
-    ├── mixins
-    │   └── gradient-animation.scss
     └── variables
         └── colors.scss
 
