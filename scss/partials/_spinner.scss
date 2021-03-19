@@ -1,36 +1,35 @@
 @import "../utils/variables/colors.scss";
 
 /* ---- spinner ----- */
+
 .loader {
-    position: absolute;
-    top: 0;
+    position: fixed;
+    left: 0px;
+    top: 0px;
     width: 100vw;
     height: 100vh;
-    z-index: 999;
-    background: $dark;
+    z-index: 9999;
     visibility: hidden;
-    opacity: 0;
-    animation: loader-anim 1.5s;
+    
+    .loader__box {
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        scroll-snap-align: center;
+        white-space: nowrap;
+        background-color: $dark;
+        opacity: 0;
+        animation: loader-anim linear 1.2s;   
+    }
 }
 
 @keyframes loader-anim {
     0% {
-        position: sticky;
+        opacity: 1;
         visibility: visible;
-        opacity: 1;
     }
-    50% {
-        opacity: 1;
-    }
-    90% {
-        opacity: 0;
-    }
-    95% {
-        visibility: hidden;
-    }
-    100% {
-        position: absolute;
-    }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
 }
 
 $spinner-size: 67px !default;
@@ -67,7 +66,7 @@ $spinner-color: $primary !default;
     }
 }
 
-body .spinner div { animation: spinner-fade 1s linear; }
+body .spinner div { animation: spinner-fade .6s linear; }
 
 @keyframes spinner-fade {
     0% {
@@ -79,10 +78,12 @@ body .spinner div { animation: spinner-fade 1s linear; }
     }
 }
 
-/* --- implementation --- */
+/* --- usage --- */
 /*
 <div class="loader center">
+<div class="loader__box center">
         <div class="spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
     </div>
 </div>
 */

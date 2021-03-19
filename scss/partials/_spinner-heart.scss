@@ -199,14 +199,14 @@ $spinner-color: $primary !default;
     }
 }
 
-/* --- implementation --- */
+/* --- usage --- */
 /*
-    <div class="loader center">        
-        <div class="loader-circles"></div>
-        <div class="box center">
-            <div class="object center">
-                <div class="heart"></div>
-            </div>
+<div class="loader f-center">        
+    <div class="loader-circles"></div>
+    <div class="box f-center">
+        <div class="object f-center">
+            <div class="heart"></div>
         </div>
     </div>
-  */
+</div>
+*/

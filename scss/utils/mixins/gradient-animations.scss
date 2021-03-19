@@ -1,0 +1,30 @@
+@mixin gradientColorSmoothAnim($start, $end) {
+    box-sizing: border-box;
+    background-size: 100%;
+    background: linear-gradient(.97turn, $start, $end);
+    position: relative;
+    z-index: 100;
+
+    &:before {
+        background: linear-gradient(.97turn, $end, $start);
+        content: "";
+        display: block;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: -100;
+        border-radius: 28px;
+        opacity: 0;
+    }
+
+    &:hover {
+        &:before { opacity: 1; }
+    }
+}
+
+// usage example
+btn {
+    @include gradientColorSmoothAnim(pink, violet);
+}
