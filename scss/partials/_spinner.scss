@@ -3,12 +3,12 @@
 /* ---- spinner ----- */
 .loader {
     position: absolute;
-    visibility: hidden;
     top: 0;
     width: 100vw;
     height: 100vh;
     z-index: 999;
     background: $dark;
+    visibility: hidden;
     opacity: 0;
     animation: loader-anim 1.5s;
 }
@@ -22,9 +22,13 @@
     50% {
         opacity: 1;
     }
-    100% {
+    90% {
         opacity: 0;
+    }
+    95% {
         visibility: hidden;
+    }
+    100% {
         position: absolute;
     }
 }
@@ -77,7 +81,8 @@ body .spinner div { animation: spinner-fade 1s linear; }
 
 /* --- implementation --- */
 /*
-<section class="loader center">
+<span class="loader center">
         <div class="spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
     </div>
+</span>
 */
