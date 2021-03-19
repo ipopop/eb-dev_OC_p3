@@ -1,32 +1,32 @@
 @import "../utils/variables/colors.scss";
 
 /* ---- spinner ----- */
+.loader {
+    position: absolute;
+    visibility: hidden;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 999;
+    background: $dark;
+    opacity: 0;
+    animation: loader-anim 1s;
+}
+
 @keyframes loader-anim {
     0% {
+        position: sticky;
         visibility: visible;
         opacity: 1;
     }
-    
     50% {
         opacity: 1;
     }
-
     100% {
-        visibility: hidden;
         opacity: 0;
+        visibility: hidden;
+        position: absolute;
     }
-}
-
-.loader {
-    visibility: hidden;
-    position: absolute;
-    top: 0;
-    width: 100vw;
-    height: 100vh !important;
-    z-index: 200;
-    background: $dark;
-    opacity: 1;
-    animation: loader-anim 1s;
 }
 
 $spinner-size: 67px !default;
@@ -48,7 +48,6 @@ $spinner-color: $primary !default;
         border-radius: .5em;
         background-color: transparent;
         transform-origin: center -.2222em;
-        animation: spinner-fade 1s infinite linear;
 
         $animation-delay: 0s;
         $blade-rotation: 0deg;
@@ -63,6 +62,8 @@ $spinner-color: $primary !default;
         }
     }
 }
+
+body .spinner div { animation: spinner-fade 1s infinite linear; }
 
 @keyframes spinner-fade {
     0% {
