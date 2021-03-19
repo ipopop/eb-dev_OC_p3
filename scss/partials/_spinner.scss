@@ -63,7 +63,7 @@ $spinner-color: $primary !default;
     }
 }
 
-body .spinner div { animation: spinner-fade 1s infinite linear; }
+body .spinner div { animation: spinner-fade 1s linear; }
 
 @keyframes spinner-fade {
     0% {
