@@ -16,7 +16,7 @@
     "url": "git+https://github.com/ipopop/BaroniEmmanuel_3_03122020.git"
   },
   "author": "eb-dev",
-  "license": "ISC",
+  "license": "MIT",
   "browserslist": "last 4 versions",
   "homepage": "https://github.com/ipopop/BaroniEmmanuel_3_03122020#readme",
   "dependencies": {},
