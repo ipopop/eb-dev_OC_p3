@@ -1,4 +1,21 @@
 /* ---- cards launch animations ----- */
+.menu {
+  .card {
+    $max-cards-number: 4;
+    $animation-duration: 700ms;
+    $animation-delay: 300ms;
+    $add-delay: 300;
+
+    @for $i from 1 through $max-cards-number {
+        &:nth-child(#{$i}) {
+            animation: menu-items-launch linear $animation-duration $animation-delay;
+            $animation-delay: $animation-delay + $add-delay;
+            animation-fill-mode: both;
+          }
+        }
+  }
+}
+
 @keyframes menu-items-launch {
   0% {
     opacity: 0;
@@ -8,29 +25,5 @@
   100% {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-.menu {
-  .card {
-    &:nth-child(1) {
-      animation: menu-items-launch 700ms 300ms;
-      animation-fill-mode: both;
-    }
-
-    &:nth-child(2) {
-      animation: menu-items-launch 700ms 500ms;
-      animation-fill-mode: both;
-    }
-
-    &:nth-child(3) {
-      animation: menu-items-launch 700ms 800ms;
-      animation-fill-mode: both;
-    }
-
-    &:nth-child(4) {
-      animation: menu-items-launch 700ms 1100ms;
-      animation-fill-mode: both;
-    }
   }
 }
