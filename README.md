@@ -11,27 +11,27 @@
 
 > ohmyfood! Paris - "commander son menu au restaurant dès la reservation" - my version of a student project in OpenClassrooms (integration exercice with animations)
 
-### 🏠 [Homepage](https://ipopop.github.io/eb-dev_OC_p3/index.html)
+### 🏠 [ohmyfood!](https://ipopop.github.io/eb-dev_OC_p3/index.html)
 
 ![responsive](https://raw.githubusercontent.com/ipopop/eb-dev_OC_p3/main/assets/img/pre-approved.jpg)
-## Install
+## Install npm (only for local development)
 
 ```sh
 npm install
 ```
 ## Usage
 
-### when dev on css, to run sass (watch only) :
+### option 1. when dev on css, to run sass (only for sass 'watch', no 'prefixer') :
 ```
 npm run sass
 ```
 
-### after sass & before save with git, prefix only (no watch) :
+### option 2. after sass postcss & before save with git ('prefixer' only, no sass 'watch') :
 ```
 npm run prefix
 ```
 
-### auto watch for sass & prefixer (watch) :
+### option 3. auto watch for sass postcss & prefixer (best option for local dev) :
 ```
 npm run watch:css
 ```
