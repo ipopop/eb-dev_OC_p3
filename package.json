@@ -13,12 +13,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ipopop/BaroniEmmanuel_3_03122020.git"
+    "url": "git+https://github.com/ipopop/eb-dev_OC_p3.git"
   },
   "author": "eb-dev",
   "license": "MIT",
   "browserslist": "last 4 versions",
-  "homepage": "https://github.com/ipopop/BaroniEmmanuel_3_03122020#readme",
+  "homepage": "https://github.com/ipopop/eb-dev_OC_p3#readme",
   "dependencies": {},
   "devDependencies": {
     "autoprefixer": "^10.2.4",
