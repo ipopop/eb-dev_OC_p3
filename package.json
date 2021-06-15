@@ -21,8 +21,8 @@
   "homepage": "https://github.com/ipopop/eb-dev_OC_p3#readme",
   "dependencies": {},
   "devDependencies": {
-    "autoprefixer": "^10.2.4",
+    "autoprefixer": "^10.2.6",
     "onchange": "^7.1.0",
-    "postcss": "^8.2.10"
+    "postcss": "^8.3.4"
   }
 }
