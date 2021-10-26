@@ -9,9 +9,14 @@
   </a>
 </p>
 
-> ohmyfood! Paris - "commander son menu au restaurant dès la reservation" - my version of a student project in OpenClassrooms (integration exercice with animations)
+> ohmyfood! Paris - "commander son menu au restaurant dès la reservation" - my version of a student project in OpenClassrooms (ex. P3 - integration exercice with animations)
 
-### 🏠 [ohmyfood!](https://ipopop.github.io/eb-dev_OC_p3/index.html)
+### 🏠 [My live version](https://ipopop.github.io/eb-dev_OC_p3/index.html)
+
+
+### ✨ [Slides présentation](https://slides.com/ipopop/soutenance-p3/fullscreen)
+
+### 🎁 [My animations tests on 'Codepen.io'](https://codepen.io/ipopop/pen/abBxMMz?editors=1100)
 
 ![responsive](https://raw.githubusercontent.com/ipopop/eb-dev_OC_p3/main/assets/img/pre-approved.jpg)
 ## Install npm (only for local development)
@@ -98,13 +103,13 @@ css
 <link rel="stylesheet" href="css/prefixed/style.css">
 ```
 
-## Author
+## Authors
 
 👤 **eb-dev**
-
 * Website: maboite.space
 * Github: [@ipopop](https://github.com/ipopop)
 
+👤 Website template & project definition : [OpenClassrooms](https://openclassrooms.com/fr/paths/185-developpeur-web)
 ## Show your support
 
 Give a ⭐️ if this project helped you!
